@@ -3,7 +3,7 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 const pages_to_search = {
 // INDEX
-    "/index.html": [{
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html": [{
         "what": "Главное",
         "tear": 100 // %
     }, {
@@ -12,7 +12,7 @@ const pages_to_search = {
     }],
 
 // ATOM
-    "/atom/atom.html": [{
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/atom.html": [{
         "what": "Атом",
         "tear": 100
     }, {
@@ -24,7 +24,7 @@ const pages_to_search = {
     }],
 
 // MOLECULES
-    "/molecules.html": [{
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules.html": [{
         "what": "Малекула",
         "tear": 100
     }, {
@@ -35,7 +35,7 @@ const pages_to_search = {
         "tear": 50
     }],
 // PERSONAL
-    "/periodic/periodic.html": [{
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/periodic/periodic.html": [{
         "what": "Переодическая система",
         "tear": 100
     },{
@@ -43,7 +43,7 @@ const pages_to_search = {
         "tear": 70
     }],
 // REACTIONS
-    "/reactions/reactions.html": [{
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html": [{
         "what": "Реакции",
         "tear": 0
     },{
