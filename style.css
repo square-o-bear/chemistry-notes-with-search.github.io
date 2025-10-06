@@ -272,7 +272,7 @@ a:hover {
 
 
 /* Адаптивность для очень маленьких экранов */
-@media (max-width: 1024px) {
+@media screen and (orientation: portrait) {
     .container {
         grid-template-columns: 1fr; /* Все элементы в один столбец */
         padding: 10px;
@@ -285,35 +285,55 @@ a:hover {
 
     .search-container {
         flex-direction: column;
+        width: 100%;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 25px;
+        overflow: hidden;
+        background-color: #f8f9fa;
+        border: 1px solid #e1e8ed;
+        margin-bottom: 30px; /* Увеличен отступ */
     }
 
     #search-input {
         width: 100%;
+        padding: 20px 25px; /* Увеличен padding */
+        font-size: 18px; /* Увеличен шрифт */
+        border-bottom: 1px solid #ddd;
     }
 
     #search-button {
         width: 100%;
-        margin-top: 5px;
+        padding: 20px 25px; /* Увеличен padding */
+        font-size: 20px; /* Увеличен шрифт */
+        margin-top: 0;
+        border-top: 1px solid #ddd;
     }
 
     .pages-list a {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 16px; /* Увеличен шрифт */
+        padding: 15px 20px; /* Увеличен padding */
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .pages-list a:hover {
+        transform: translateY(-3px); /* Подъём при наведении */
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25); /* Тень */
     }
 
     .center-section {
-        padding: 15px;
+        padding: 25px;
     }
 
     h1, h2, h3 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     ul, ol {
-        padding-left: 15px;
+        padding-left: 18px;
     }
 
     code {
-        font-size: 14px;
+        font-size: 15px;
     }
 }

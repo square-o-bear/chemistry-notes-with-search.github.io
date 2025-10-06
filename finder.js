@@ -18,9 +18,6 @@ const pages_to_search = {
     }, {
         "what": "малекул",
         "tear": 50
-    }, {
-        "what": "молекул",
-        "tear": 50
     }],
 
 // MOLECULES
