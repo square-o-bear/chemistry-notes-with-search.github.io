@@ -3,7 +3,7 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 const pages_to_search = {
 // INDEX
-    "index.html": [{
+    "/index.html": [{
         "what": "Главное",
         "tear": 100 // %
     }, {
@@ -12,7 +12,7 @@ const pages_to_search = {
     }],
 
 // ATOM
-    "atom.html": [{
+    "/atom/atom.html": [{
         "what": "Атом",
         "tear": 100
     }, {
@@ -24,7 +24,7 @@ const pages_to_search = {
     }],
 
 // MOLECULES
-    "molecules.html": [{
+    "/molecules.html": [{
         "what": "Малекула",
         "tear": 100
     }, {
