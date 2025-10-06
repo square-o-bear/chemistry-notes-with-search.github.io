@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Атом - Конспект по химии</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="atom/atomCreate.css">
 </head>
 <body>
     <div class="container">
@@ -53,8 +54,56 @@
             
             <h2>Размеры атома</h2>
             <p>Диаметр атома составляет примерно 10⁻¹⁰ метров (1 ангстрем). Ядро в 10000-100000 раз меньше атома.</p>
+            <div class="element-visualizer">
+            <div class="element-container">
+                <!-- Квадрат химического элемента -->
+                <div id="element-box">
+                    <div id="element-name">Водород</div>
+                    <div id="element-symbol">H</div>
+                    <div id="atomic-number">1</div>
+                    <div id="atom-mass">1 а.е.м.</div>
+                </div>
+                
+                <!-- Кнопка рассчитать -->
+                <button id="calculate-button">Рассчитать</button>
+            </div>
+            
+            <div class="settings-container">
+                <!-- Блоки для ввода частиц -->
+                <div class="particle-inputs">
+                    <!-- Протоны -->
+                    <div class="input-group">
+                        <div class="label-wrapper">
+                            <span class="field-label">Протоны (Z)</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="number" id="protons-input" value="1" min="1">
+                        </div>
+                    </div>
+                    
+                    <!-- Нейтроны -->
+                    <div class="input-group">
+                        <div class="label-wrapper">
+                            <span class="field-label">Нейтроны (N)</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="number" id="neutrons-input" value="0" min="0">
+                        </div>
+                    </div>
+                    
+                    <!-- Электроны -->
+                    <div class="input-group">
+                        <div class="label-wrapper">
+                            <span class="field-label">Электроны (E)</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="number" id="electrons-input" value="1" min="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <script src="finder.js"></script>
+        </div>
         <div class="right-section">
             <div class="pages-nav">
                 <h3>Основные страницы</h3>
@@ -68,7 +117,8 @@
             </div>
         </div>
     </div>
-
+    
     <script src="finder.js"></script>
+    <script src="atom/atomCreate.js"></script>
 </body>
 </html>
