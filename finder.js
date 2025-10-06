@@ -33,6 +33,22 @@ const pages_to_search = {
     }, {
         "what": "атом",
         "tear": 50
+    }],
+// PERSONAL
+    "/periodic/periodic.html": [{
+        "what": "Переодическая система",
+        "tear": 100
+    },{
+        "what": "Менделеев",
+        "tear": 70
+    }],
+// REACTIONS
+    "/reactions/reactions.html": [{
+        "what": "Реакции",
+        "tear": 0
+    },{
+        "what": "реакци",
+        "tear": 100
     }]
 }
 
@@ -91,6 +107,6 @@ async function finder() {
 search_button.addEventListener("click", finder)
 search_input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        finder(); // Вызываем функцию поиска
+        finder();
     }
 });
