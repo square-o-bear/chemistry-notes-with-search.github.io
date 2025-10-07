@@ -3,50 +3,58 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 const pages_to_search = {
 // INDEX
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html": [{
-        "what": "Главное",
-        "tear": 100 // %
-    }, {
-        "what": "хими",
-        "tear": 100 // %
-    }],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html": [
+        {"what": "Главное", "tear": 100},
+        {"what": "хими", "tear": 100}
+    ],
 
 // ATOM
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/atom.html": [{
-        "what": "Атом",
-        "tear": 100
-    }, {
-        "what": "малекул",
-        "tear": 50
-    }],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/atom.html": [
+        {"what": "Атом", "tear": 100},
+        {"what": "малекул", "tear": 50}
+    ],
+// ELEMENTS
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/elements/H.html": [
+        { "what": "Водород", "tear": 100 },
+        { "what": "H", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/elements/He.html": [
+        { "what": "Гелий", "tear": 100 },
+        { "what": "He", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/elements/Li.html": [
+        { "what": "Литий", "tear": 100 },
+        { "what": "Li", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/elements/Be.html": [
+        { "what": "Бериллий", "tear": 100 },
+        { "what": "Be", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/elements/B.html": [
+        { "what": "Бор", "tear": 100 },
+        { "what": "B", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/elements/C.html": [
+        { "what": "Углерод", "tear": 100 },
+        { "what": "C", "tear": 100 }
+    ],
 
 // MOLECULES
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules.html": [{
-        "what": "Малекула",
-        "tear": 100
-    }, {
-        "what": "молекула",
-        "tear": 100
-    }, {
-        "what": "атом",
-        "tear": 50
-    }],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules.html": [
+        {"what": "Малекула", "tear": 100},
+        {"what": "молекула", "tear": 100},
+        {"what": "атом", "tear": 50}
+    ],
 // PERSONAL
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/periodic/periodic.html": [{
-        "what": "Переодическая система",
-        "tear": 100
-    },{
-        "what": "Менделеев",
-        "tear": 70
-    }],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/periodic/periodic.html": [
+        {"what": "Переодическая система", "tear": 100},
+        {"what": "Менделеев", "tear": 70}
+    ],
 // REACTIONS
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html": [{
-        "what": "Реакции",
-        "tear": 0
-    },{
-        "what": "реакци",
-        "tear": 100
-    }]
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html": [
+        {"what": "Реакции", "tear": 0},
+        {"what": "реакци", "tear": 100}
+    ]
 }
 
 async function finder() {
