@@ -38,6 +38,55 @@ const pages_to_search = {
         { "what": "Углерод", "tear": 100 },
         { "what": "C", "tear": 100 }
     ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/N.html": [
+        { "what": "Азот", "tear": 100 },
+        { "what": "N", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/O.html": [
+        { "what": "Кислород", "tear": 100 },
+        { "what": "O", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/F.html": [
+        { "what": "Фтор", "tear": 100 },
+        { "what": "F", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ne.html": [
+        { "what": "Неон", "tear": 100 },
+        { "what": "Ne", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Na.html": [
+        { "what": "Натрий", "tear": 100 },
+        { "what": "Na", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Mg.html": [
+        { "what": "Магния", "tear": 100 },
+        { "what": "Mg", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Al.html": [
+        { "what": "Алюминий", "tear": 100 },
+        { "what": "Al", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Si.html": [
+        { "what": "Кремний", "tear": 100 },
+        { "what": "Силициум", "tear": 100 },
+        { "what": "Si", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/P.html": [
+        { "what": "Фосфор", "tear": 100 },
+        { "what": "P", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/S.html": [
+        { "what": "Сера", "tear": 100 },
+        { "what": "S", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Cl.html": [
+        { "what": "Хлор", "tear": 100 },
+        { "what": "Cl", "tear": 100 }
+    ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ar.html": [
+        { "what": "Аргон", "tear": 100 },
+        { "what": "Ar", "tear": 100 }
+    ],
 
 // MOLECULES
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules.html": [
