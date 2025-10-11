@@ -32,6 +32,33 @@
             <h2>Определение атома</h2>
             <p>Атом - это наименьшая частица химического элемента, сохраняющая его химические свойства. Атом состоит из атомного ядра и электронной оболочки.</p>
             
+            <h2>Наглядный пример атома</h2>
+            <div class="element-visualizer">
+                <!-- Левая панель -->
+              <div class="left-panel-atom">
+                <div class="element-info">
+                  <div id="element-symbol">H</div>
+                  <div id="element-name">Водород</div>
+                  <div class="element-details">
+                    <span id="atom-number">Номер 1</span><br><br>
+                    <span id="atom-mass">1.008 а.е.м</span><br><br>
+                    <span id="atom-electrons">1s¹</span>
+                  </div>
+                </div>
+                
+                <button id="plus">Добавить электрон</button>
+                <button id="minus">Удалить электрон</button>
+                <a href="elements/H.html" id="info">Информация о нём</a>
+              </div>
+
+              <!-- Основная зона -->
+              <div id="main-container">
+                <div id="atom">
+                  <div class="nucleus"></div>
+                </div>
+              </div>
+            </div>
+
             <h2>Строение атома</h2>
             <p>Атом состоит из:</p>
             <ul>
@@ -54,56 +81,7 @@
             
             <h2>Размеры атома</h2>
             <p>Диаметр атома составляет примерно 10⁻¹⁰ метров (1 ангстрем). Ядро в 10000-100000 раз меньше атома.</p>
-            <div class="element-visualizer">
-            <div class="element-container">
-                <!-- Квадрат химического элемента -->
-                <div id="element-box">
-                    <div id="element-name">Водород</div>
-                    <div id="element-symbol">H</div>
-                    <div id="atomic-number">1</div>
-                    <div id="atom-mass">1 а.е.м.</div>
-                </div>
-                
-                <!-- Кнопка рассчитать -->
-                <button id="calculate-button">Рассчитать</button>
             </div>
-            
-            <div class="settings-container">
-                <!-- Блоки для ввода частиц -->
-                <div class="particle-inputs">
-                    <!-- Протоны -->
-                    <div class="input-group">
-                        <div class="label-wrapper">
-                            <span class="field-label">Протоны (Z)</span>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="number" id="protons-input" value="1" min="1">
-                        </div>
-                    </div>
-                    
-                    <!-- Нейтроны -->
-                    <div class="input-group">
-                        <div class="label-wrapper">
-                            <span class="field-label">Нейтроны (N)</span>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="number" id="neutrons-input" value="0" min="0">
-                        </div>
-                    </div>
-                    
-                    <!-- Электроны -->
-                    <div class="input-group">
-                        <div class="label-wrapper">
-                            <span class="field-label">Электроны (E)</span>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="number" id="electrons-input" value="1" min="1">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
         <div class="right-section">
             <div class="pages-nav">
                 <h3>Основные страницы</h3>

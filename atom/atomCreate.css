@@ -1,133 +1,116 @@
-/* Стили для визуализатора элемента */
 .element-visualizer {
-    margin-top: 40px;
+    background-color: #111;
+    height: 100vh;
+    overflow: hidden; /* Скрывает всё, что выходит за пределы контейнера */
+    position: relative; /* Устанавливает контекст для абсолютного позиционирования */
+}
+
+.left-panel-atom {
+    width: 250px;
+    background-color: #222;
+    color: white;
     padding: 20px;
-    background: #f5f5f5;
-    border: 2px dashed #ccc;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-panel-atom button {
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.left-panel-atom a {
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.left-panel-atom button:hover {
+    background-color: #444;
+}
+
+.element-info {
+    background-color: #333;
+    padding: 15px;
     border-radius: 8px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 30px;
-}
-
-.element-container {
-    flex: 1;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 8px;
 }
 
-.settings-container {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
+#element-symbol {
+    font-size: 48px;
+    text-align: center;
 }
 
-/* Стили для квадрата элемента */
-#element-box {
-    width: 120px;
-    height: 120px;
-    background: #333;
-    color: white;
-    font-family: 'Courier New', monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 4px;
-    position: relative;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-
-/* Стиль для названия элемента */
 #element-name {
     text-align: center;
+    font-weight: bold;
+}
+
+.element-details {
     font-size: 14px;
-    margin-bottom: 5px;
-    color: #fff;
+    color: #aaa;
 }
 
-/* Стиль для химического символа */
-#element-symbol {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-/* Стиль для атомного номера */
-#atomic-number {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    font-size: 12px;
-}
-
-/* Стиль для массового числа */
-#atom-mass {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    font-size: 12px;
-    color: white;
-}
-
-/* Кнопка рассчитать */
-.calculate-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.calculate-button:hover {
-    background-color: #45a049;
-}
-
-.particle-inputs {
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-}
-
-.label-wrapper {
+/* Основная зона */
+#main-container {
     flex: 1;
-    text-align: right;
-    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Убраны внешние отступы */
+    padding: 0;
 }
 
-.field-label {
-    font-weight: bold;
-    color: #333;
+#atom {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    max-width: 100%; /* Обеспечивает адаптивность */
+    max-height: 100%;
 }
 
-.input-wrapper {
-    flex: 2;
+/* Ядро атома */
+.nucleus {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b35;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff6b35;
 }
 
-/* Стили для полей ввода */
-.input-wrapper input[type="number"] {
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid #4CAF50;
-    border-radius: 4px;
-    color: #333;
-    outline: none;
-    transition: all 0.3s ease;
+.orbit {
+    border-radius: 50%;
+    border: 2px solid #222;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.electron {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: calc(1.5*min(1vh, 1vw));
+    height: calc(1.5*min(1vh, 1vw));
+    background-color: #00cfff;
+    border-radius: 50%;
+    transform-origin: center;
+    box-shadow: 0 0 5px #00c0ff;
 }

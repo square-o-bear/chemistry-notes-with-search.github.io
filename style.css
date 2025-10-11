@@ -322,6 +322,7 @@ a:hover {
     }
 
     .center-section {
+        min-height: 200vh;
         padding: 25px;
     }
 

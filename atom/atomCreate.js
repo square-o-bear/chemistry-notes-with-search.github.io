@@ -1,429 +1,164 @@
-const elements = [
-    { // Индекс 0 оставлен пустым
-        name: "НЕ ПРАВИЛЬНЫЙ ВВОД",
-        symbol: "!"
-    },
-    {
-        name: "Водород",
-        symbol: "H",
-        mass: 1,
-        minNeutrons: 0,
-        maxNeutrons: 2
-    },
-    {
-        name: "Гелий",
-        symbol: "He",
-        mass: 4,
-        minNeutrons: 1,
-        maxNeutrons: 2
-    },
-    {
-        name: "Литий",
-        symbol: "Li",
-        mass: 7,
-        minNeutrons: 3,
-        maxNeutrons: 4
-    },
-    {
-        name: "Бериллий",
-        symbol: "Be",
-        mass: 9,
-        minNeutrons: 5,
-        maxNeutrons: 5
-    },
-    {
-        name: "Бор",
-        symbol: "B",
-        mass: 11,
-        minNeutrons: 5,
-        maxNeutrons: 8
-    },
-    {
-        name: "Углерод",
-        symbol: "C",
-        mass: 12,
-        minNeutrons: 6,
-        maxNeutrons: 8
-    },
-    {
-        name: "Азот",
-        symbol: "N",
-        mass: 14,
-        minNeutrons: 7,
-        maxNeutrons: 9
-    },
-    {
-        name: "Кислород",
-        symbol: "O",
-        mass: 16,
-        minNeutrons: 8,
-        maxNeutrons: 10
-    },
-    {
-        name: "Фтор",
-        symbol: "F",
-        mass: 19,
-        minNeutrons: 9,
-        maxNeutrons: 11
-    },
-    {
-        name: "Неон",
-        symbol: "Ne",
-        mass: 20,
-        minNeutrons: 10,
-        maxNeutrons: 12
-    },
-    {
-        name: "Натрий",
-        symbol: "Na",
-        mass: 23,
-        minNeutrons: 12,
-        maxNeutrons: 14
-    },
-    {
-        name: "Магний",
-        symbol: "Mg",
-        mass: 24,
-        minNeutrons: 12,
-        maxNeutrons: 16
-    },
-    {
-        name: "Алюминий",
-        symbol: "Al",
-        mass: 27,
-        minNeutrons: 14,
-        maxNeutrons: 16
-    },
-    {
-        name: "Кремний",
-        symbol: "Si",
-        mass: 28,
-        minNeutrons: 14,
-        maxNeutrons: 18
-    },
-    {
-        name: "Фосфор",
-        symbol: "P",
-        mass: 31,
-        minNeutrons: 16,
-        maxNeutrons: 18
-    },
-    {
-        name: "Сера",
-        symbol: "S",
-        mass: 32,
-        minNeutrons: 16,
-        maxNeutrons: 20
-    },
-    {
-        name: "Хлор",
-        symbol: "Cl",
-        mass: 35,
-        minNeutrons: 18,
-        maxNeutrons: 20
-    },
-    {
-        name: "Аргон",
-        symbol: "Ar",
-        mass: 40,
-        minNeutrons: 22,
-        maxNeutrons: 24
-    },
-    {
-        name: "Калий",
-        symbol: "K",
-        mass: 39,
-        minNeutrons: 20,
-        maxNeutrons: 22
-    },
-    {
-        name: "Кальций",
-        symbol: "Ca",
-        mass: 40,
-        minNeutrons: 20,
-        maxNeutrons: 28
-    },
-    {
-        name: "Скандий",
-        symbol: "Sc",
-        mass: 45,
-        minNeutrons: 24,
-        maxNeutrons: 26
-    },
-    {
-        name: "Титан",
-        symbol: "Ti",
-        mass: 48,
-        minNeutrons: 26,
-        maxNeutrons: 30
-    },
-    {
-        name: "Ванадий",
-        symbol: "V",
-        mass: 51,
-        minNeutrons: 28,
-        maxNeutrons: 30
-    },
-    {
-        name: "Хром",
-        symbol: "Cr",
-        mass: 52,
-        minNeutrons: 28,
-        maxNeutrons: 32
-    },
-    {
-        name: "Марганец",
-        symbol: "Mn",
-        mass: 55,
-        minNeutrons: 30,
-        maxNeutrons: 32
-    },
-    {
-        name: "Железо",
-        symbol: "Fe",
-        mass: 56,
-        minNeutrons: 30,
-        maxNeutrons: 34
-    },
-    {
-        name: "Кобальт",
-        symbol: "Co",
-        mass: 59,
-        minNeutrons: 32,
-        maxNeutrons: 34
-    },
-    {
-        name: "Никель",
-        symbol: "Ni",
-        mass: 58,
-        minNeutrons: 30,
-        maxNeutrons: 36
-    },
-    {
-        name: "Медь",
-        symbol: "Cu",
-        mass: 64,
-        minNeutrons: 35,
-        maxNeutrons: 37
-    },
-    {
-        name: "Цинк",
-        symbol: "Zn",
-        mass: 65,
-        minNeutrons: 35,
-        maxNeutrons: 41
-    },
-    {
-        name: "Галлий",
-        symbol: "Ga",
-        mass: 70,
-        minNeutrons: 41,
-        maxNeutrons: 43
-    },
-    {
-        name: "Германий",
-        symbol: "Ge",
-        mass: 72,
-        minNeutrons: 42,
-        maxNeutrons: 46
-    },
-    {
-        name: "Мышьяк",
-        symbol: "As",
-        mass: 75,
-        minNeutrons: 42,
-        maxNeutrons: 46
-    },
-    {
-        name: "Селен",
-        symbol: "Se",
-        mass: 79,
-        minNeutrons: 45,
-        maxNeutrons: 49
-    },
-    {
-        name: "Бром",
-        symbol: "Br",
-        mass: 80,
-        minNeutrons: 45,
-        maxNeutrons: 47
-    },
-    {
-        name: "Криптон",
-        symbol: "Kr",
-        mass: 84,
-        minNeutrons: 48,
-        maxNeutrons: 50
-    },
-    {
-        name: "Рубидий",
-        symbol: "Rb",
-        mass: 85,
-        minNeutrons: 48,
-        maxNeutrons: 50
-    },
-    {
-        name: "Стронций",
-        symbol: "Sr",
-        mass: 88,
-        minNeutrons: 50,
-        maxNeutrons: 52
-    },
-    {
-        name: "Иттрий",
-        symbol: "Y",
-        mass: 89,
-        minNeutrons: 50,
-        maxNeutrons: 52
-    },
-    {
-        name: "Цирконий",
-        symbol: "Zr",
-        mass: 91,
-        minNeutrons: 51,
-        maxNeutrons: 57
-    },
-    {
-        name: "Ниобий",
-        symbol: "Nb",
-        mass: 93,
-        minNeutrons: 52,
-        maxNeutrons: 54
-    },
-    {
-        name: "Молибден",
-        symbol: "Mo",
-        mass: 96,
-        minNeutrons: 52,
-        maxNeutrons: 58
-    },
-    {
-        name: "Технеций",
-        symbol: "Tc",
-        mass: 98,
-        minNeutrons: 53,
-        maxNeutrons: 55
-    },
-    {
-        name: "Рутений",
-        symbol: "Ru",
-        mass: 101,
-        minNeutrons: 56,
-        maxNeutrons: 58
-    },
-    {
-        name: "Родий",
-        symbol: "Rh",
-        mass: 103,
-        minNeutrons: 58,
-        maxNeutrons: 60
-    },
-    {
-        name: "Палладий",
-        symbol: "Pd",
-        mass: 106,
-        minNeutrons: 58,
-        maxNeutrons: 64
-    },
-    {
-        name: "Серебро",
-        symbol: "Ag",
-        mass: 108,
-        minNeutrons: 61,
-        maxNeutrons: 63
-    },
-    {
-        name: "Цинк",
-        symbol: "Cd",
-        mass: 112,
-        minNeutrons: 64,
-        maxNeutrons: 68
-    },
-    {
-        name: "Индий",
-        symbol: "In",
-        mass: 115,
-        minNeutrons: 66,
-        maxNeutrons: 68
-    },
-    {
-        name: "Олово",
-        symbol: "Sn",
-        mass: 119,
-        minNeutrons: 69,
-        maxNeutrons: 75
-    },
-    {
-        name: "Сурьма",
-        symbol: "Sb",
-        mass: 122,
-        minNeutrons: 71,
-        maxNeutrons: 75
-    },
-    {
-        name: "Теллур",
-        symbol: "Te",
-        mass: 128,
-        minNeutrons: 76,
-        maxNeutrons: 82
-    },
-    {
-        name: "Иод",
-        symbol: "I",
-        mass: 127,
-        minNeutrons: 74,
-        maxNeutrons: 76
-    },
-    {
-        name: "Ксенон",
-        symbol: "Xe",
-        mass: 131,
-        minNeutrons: 75,
-        maxNeutrons: 81
+
+function add() {
+    if (count+1 > 118) return;
+
+    count++;
+    let levelObj = {}
+    let sublayersElectron = "";
+    let remainingElectrons = count;
+    let lastLayer = "";
+    const previousLayer = layer
+    layer = 0;
+    for (const { level, maxElectrons } of sublayersMax) {
+        if (remainingElectrons <= 0) break;
+
+        const electronsHere = Math.min(remainingElectrons, maxElectrons);
+        levelObj[level] = electronsHere
+        lastLayer = parseInt(level[0]);
+        remainingElectrons -= electronsHere;
     }
-];
+    for (const level of sublayers) {
+        if (levelObj[level] === undefined) break;
+        layer=parseInt(level[0]);
+        sublayersElectron += `${level}${superscriptMap[levelObj[level]]} `
+    }
+    const angle = Math.random() * 361;
 
-// масса протона 1,00728 а. е. м 
-// масса электрона 5,486*10в минус 4ой степени а. е. м
-// масса нейтронна 1,008 а.е.м
+    atomNumber.textContent = `Номер ${count}`
+    atomElectrons.textContent = sublayersElectron
+    elementSymbol.textContent = elementSymbols[count-1];
+    elementName.textContent = elementNames[count-1];
+    atomMass.textContent = `${elementMasses[count-1]} а.е.м`;
+    infoBut.href = `elements/${elementSymbols[count-1]}.html`;
 
-const kvarkMass = [1.00728, 5.486*10^4, 1.008]
 
-// element
-const elementBox = document.getElementById("element-box");
-const elementName = document.getElementById("element-name");
-const elementSymbol = document.getElementById("element-symbol");
-const atomicNumber = document.getElementById("atomic-number");
-const atomMass = document.getElementById("atom-mass");
+    let electronOrbitLength = layer*3+2;
+    let newOrbit = null;
+    if (previousLayer != layer) {
+        newOrbit = document.createElement('div');
+        newOrbit.style.height = `calc(${electronOrbitLength*2}*min(1vh, 1vw))`
+        newOrbit.style.width = `calc(${electronOrbitLength*2}*min(1vh, 1vw))`
+        newOrbit.classList.add("orbit");
+        atom.appendChild(newOrbit)
+    }
+    
+    const newElectron = document.createElement('div');
+    newElectron.classList.add("electron");
+    newElectron.id = count;
+    //newElectron.style.transform = `translate(calc(${Math.cos(angle)*layer - 2.5}*min(1vh, 1vw))), calc(${Math.cos(angle)*layer - 2.5}*min(1vh, 1vw)))`;\
 
-// input + calculate button
-const calculateButton = document.getElementById("calculate-button");
-const protonsInput = document.getElementById("protons-input");
-const neutronsInput = document.getElementById("neutrons-input");
-const electronsInput = document.getElementById("electrons-input");
+    atom.appendChild(newElectron)
+    electroms.push({
+        "el": newElectron,
+        "orbit": newOrbit,
+        length: electronOrbitLength,
+        speed: 0.01, //Math.random() * 0.015 + 0.005, 
+        angle: angle
+    })
+}
 
-function calculateAtom() {
-    const kvarkCount = [parseInt(protonsInput.value), parseInt(neutronsInput.value), parseInt(electronsInput.value)]
-    let canExist = true;
+function minus() {
+    if (count > 0) {
+        count--;
 
-    if (kvarkCount[0] < 1 || kvarkCount[1] < 0 || kvarkCount[2] < 1 || kvarkCount[0] != kvarkCount[2]) canExist = false;
-    else if (elements[kvarkCount[0]].maxNeutrons < kvarkCount[1] || kvarkCount[1] < elements[kvarkCount[0]].minNeutrons) canExist = false;
+        if (count == 0) {
+            atomNumber.textContent = "";
+            atomMass.textContent = "";
+            atomElectrons.textContent = "";
+            elementSymbol.textContent = "";
+            elementName.textContent = "";
+            infoBut.href = "";
+        }
+        else {
+            let remainingElectrons = count;
+            let sublayersElectron = "";
+            let levelObj = {}
+            for (const { level, maxElectrons } of sublayersMax) {
+                if (remainingElectrons <= 0) break;
 
-    if (canExist) {
-        atomicNumber.textContent = kvarkCount[0]
-        elementName.textContent = elements[kvarkCount[0]].name;
-        elementSymbol.textContent = elements[kvarkCount[0]].symbol;
-        atomMass.textContent = [kvarkCount[0]*kvarkMass[0], kvarkCount[1]*kvarkMass[1], kvarkCount[2]*kvarkMass[2]].reduce((accumulator, currentValue) => accumulator + currentValue, 0).toFixed(3) + " а.е.м";
-        elementBox.style.backgroundColor="#333"
-    } else {
-        atomMass.textContent = -1
-        atomicNumber.textContent = -1
-        elementName.textContent = elements[0].name;
-        elementSymbol.textContent = elements[0].symbol;
-        elementBox.style.backgroundColor="#b00"
+                const electronsHere = Math.min(remainingElectrons, maxElectrons);
+                levelObj[level] = electronsHere
+                remainingElectrons -= electronsHere;
+            }
+            for (const level of sublayers) {
+                if (levelObj[level] === undefined) break;
+                layer++;
+                sublayersElectron += `${level}${superscriptMap[levelObj[level]]} `
+            }
+            atomElectrons.textContent = sublayersElectron;
+
+            atomNumber.textContent = `Номер ${count}`
+            elementSymbol.textContent = `${elementSymbols[count-1]}`;
+            elementName.textContent = elementNames[count-1];
+            atomMass.textContent = `${elementMasses[count-1]} а.е.м`;     
+        }
+
+
+        const obj = electroms.pop();
+        obj.el.remove();
+        if (obj.orbit !== null) {
+            obj.orbit.remove();
+            layer--;
+        }
     }
 }
 
+const atom = document.getElementById("atom");
+const atomNumber = document.getElementById("atom-number")
+const atomMass = document.getElementById("atom-mass")
+const atomElectrons = document.getElementById("atom-electrons")
+const elementSymbol = document.getElementById("element-symbol")
+const elementName = document.getElementById("element-name")
 
-calculateButton.addEventListener("click", calculateAtom)
-calculateAtom();
+const plusBut = document.getElementById("plus")
+const minusBut = document.getElementById("minus")
+const infoBut = document.getElementById("info")
+
+let count = 0
+let layer = 0
+const electroms = [];
+const sublayers = ["1s", "2s", "2p", "3s", "3p", "3d", "4s", "4p", "4f", "4d", "5d", "5s", "5p", "5f", "6s", "6p", "6d", "7s", "7p"];
+const sublayersMax = [
+    { level: "1s", maxElectrons: 2 },
+    { level: "2s", maxElectrons: 2 },
+    { level: "2p", maxElectrons: 6 },
+    { level: "3s", maxElectrons: 2 },
+    { level: "3p", maxElectrons: 6 },
+    { level: "4s", maxElectrons: 2 },
+    { level: "3d", maxElectrons: 10 },
+    { level: "4p", maxElectrons: 6 },
+    { level: "5s", maxElectrons: 2 },
+    { level: "4d", maxElectrons: 10 },
+    { level: "5p", maxElectrons: 6 },
+    { level: "6s", maxElectrons: 2 },
+    { level: "4f", maxElectrons: 14 },
+    { level: "5d", maxElectrons: 10 },
+    { level: "6p", maxElectrons: 6 },
+    { level: "7s", maxElectrons: 2 },
+    { level: "5f", maxElectrons: 14 },
+    { level: "6d", maxElectrons: 10 },
+    { level: "7p", maxElectrons: 6 }
+  ];
+
+const superscriptMap = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", "¹⁰", "¹ⁱ", "¹²", "¹³", "¹⁴", "¹⁵", "¹⁶", "¹⁷", "¹⁸", "¹⁹"];
+const elementSymbols = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"]
+const elementNames = ["Водород", "Гелий", "Литий", "Бериллий", "Бор", "Углерод", "Азот", "Кислород", "Фтор", "Неон", "Натрий", "Магний", "Алюминий", "Кремний", "Фосфор", "Сера", "Хлор", "Аргон", "Калий", "Кальций", "Скандий", "Титан", "Ванадий", "Хром", "Марганец", "Железо", "Кобальт", "Никель", "Медь", "Цинк", "Галлий", "Германий", "Мышьяк", "Селен", "Бром", "Криптон", "Рубидий", "Стронций", "Иттрий", "Цирконий", "Ниобий", "Молибден", "Технеций", "Рутений", "Родий", "Палладий", "Серебро", "Кадмий", "Индий", "Олово", "Сурьма", "Теллур", "Иод", "Ксенон", "Цезий", "Барий", "Лантан", "Церий", "Празеодим", "Неодим", "Прометий", "Самарий", "Европий", "Гадолиний", "Тербий", "Диспрозий", "Гольмий", "Эрбий", "Тулий", "Иттербий", "Лютеций", "Гафний", "Тантал", "Вольфрам", "Рений", "Осмий", "Иридий", "Платина", "Золото", "Ртуть", "Таллий", "Свинец", "Висмут", "Полоний", "Астат", "Радон", "Франций", "Радий", "Актиний", "Торий", "Протактиний", "Уран", "Нептуний", "Плутоний", "Америций", "Кюрий", "Берклий", "Калифорний", "Эйнштейний", "Фермий", "Менделевий", "Нобелий", "Лоуренсий", "Резерфордий", "Дубний", "Сиборгий", "Борий", "Хассий", "Мейтнерий", "Дармштадтий", "Рентгений", "Коперниций", "Нихоний", "Флеровий", "Московий", "Ливерморий", "Теннессин", "Оганессон"]
+const elementMasses = ["1.00784 (1)","4.002602 (4)","6.941 (7)","9.012182 (9)","10.811 (11)","12.0107 (12)","14.0067 (14)","15.999 (16)","18.9984032 (19)","20.1797 (20)","22.98976928 (23)","24.305 (24)","26.9815386 (27)","28.0855 (28)","30.973762 (31)","32.065 (32)","35.453 (35)","39.948 (40)","39.0983 (39)","40.078 (40)","44.955912 (45)","47.867 (48)","50.9415 (51)","51.9961 (52)","54.938045 (55)","55.845 (56)","58.933195 (59)","58.6934 (59)","63.546 (64)","65.409 (65)","69.723 (70)","72.64 (73)","74.9216 (75)","78.96 (79)","79.904 (80)","83.798 (84)","85.4678 (85)","87.62 (88)","138.90547 (139)","140.116 (140)","140.90766 (141)","144.24 (144)","145.0 (145)","150.36 (150)","151.964 (152)","157.25 (157)","162.50 (163)","164.93032 (165)","167.259 (167)","173.04 (173)","174.9668 (175)","178.49 (178)","180.94788 (181)","183.84 (184)","186.207 (186)","190.23 (190)","192.217 (192)","195.084 (195)","196.966569 (197)","200.592 (201)","204.3833 (204)","207.2 (207)","208.9804 (209)","209.0 (209)","222.0 (222)","223.0 (223)","226.0 (226)","227.0 (227)","231.0 (231)","238.03 (238)","243.0 (243)","244.0 (244)","247.0 (247)","251.0 (251)","252.0 (252)","257.0 (257)","258.0 (258)","259.0 (259)","262.0 (262)","264.0 (264)","269.0 (269)","272.0 (272)","277.0 (277)","284.0 (284)","289.0 (289)","294.0 (294)","290.0 (290)","294.0 (294)","315.0 (315)","232.03806 (232)","231.03588 (231)","238.02891 (238)","237.0 (237)","244.0 (244)","243.0 (243)","247.0 (247)","247.0 (247)","251.0 (251)","252.0 (252)","257.0 (257)","258.0 (258)","259.0 (259)","262.0 (262)","261.0 (261)","262.0 (262)","266.0 (266)","264.0 (264)","269.0 (269)","272.0 (272)","270.0 (270)","277.0 (277)","278.0 (278)","285.0 (285)","284.0 (284)","289.0 (289)","290.0 (290)","294.0 (294)","294.0 (294)"];
+
+let randomCountOfElectrons = 1+Math.floor(118 * Math.random())
+for (let i = 0; i < randomCountOfElectrons; ++i) {
+    add();
+}
+
+function spin() {
+    electroms.forEach(element => {
+        element.el.style.transform = `translate(calc(${Math.cos(element.angle)*element.length - 0.75}*min(1vh, 1vw)), calc(${Math.sin(element.angle)*element.length - 0.75}*min(1vh, 1vw)))`;
+        element.angle += element.speed;
+    });
+}
+
+
+plusBut.addEventListener('click', add)
+minusBut.addEventListener('click', minus)
+
+setInterval(spin, 1);
