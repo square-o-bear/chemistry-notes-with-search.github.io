@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Периодическая система - Конспект по химии</title>
     <link rel="stylesheet" href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/style.css">
-    <!-- <link rel="stylesheet" href="periodicCreate.css"> Дополнительный локальный стиль -->
+    <link rel="stylesheet" href="tablicha.css">
 </head>
 <body>
     <div class="container">
@@ -29,7 +29,23 @@
         <div class="center-section">
             <h1>Периодическая система химических элементов</h1>
             
-            <h2><img src="periodic.jpg" alt="Картинка - таблица Менделеев" style="width:90%;height:min(30w, 30vh);"></h2>
+            <h2><div class="center-section">
+                <h1>Таблица Менделеева</h1>
+
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-color metal"></div> Металл</div>
+                    <div class="legend-item"><div class="legend-color metalloid"></div> Полуметалл</div>
+                    <div class="legend-item"><div class="legend-color nonmetal"></div> Неметалл</div>
+                    <div class="legend-item"><div class="legend-color noble-gas"></div> Инертный газ</div>
+                    <div class="legend-item"><div class="legend-color f-element"></div> Лантаноид / Актиноид</div>
+                </div>
+
+                <div class="periodic-table-container">
+                    <div class="main-table" id="mainTable"></div>
+                    <div class="f-block" id="lanthanides"></div>
+                    <div class="f-block" id="actinides"></div>
+                </div>
+                </div></h2>
             <h2>Определение и история</h2>
             <p>Периодическая система химических элементов — это таблица, которая классифицирует химические элементы на основе их атомного номера, электронной конфигурации и повторяющихся химических свойств. Её создал Дмитрий Иванович Менделеев в 1869 году.</p>
             
@@ -94,5 +110,6 @@
     </div>
     
     <script src="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/finder.js"></script>
+    <script src="tablicha.js"></script>
 </body>
 </html>

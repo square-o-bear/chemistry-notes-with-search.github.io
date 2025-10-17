@@ -63,10 +63,10 @@ function minus() {
 
         if (count == 0) {
             atomNumber.textContent = "";
-            atomMass.textContent = "";
+            atomMass.textContent = "1,007276 (1) а.е.м";
             atomElectrons.textContent = "";
-            elementSymbol.textContent = "";
-            elementName.textContent = "";
+            elementSymbol.textContent = "+";
+            elementName.textContent = "Протон";
             infoBut.href = "";
         }
         else {
@@ -87,6 +87,7 @@ function minus() {
             }
             atomElectrons.textContent = sublayersElectron;
 
+            infoBut.href = `elements/${elementSymbols[count-1]}.html`;
             atomNumber.textContent = `Номер ${count}`
             elementSymbol.textContent = `${elementSymbols[count-1]}`;
             elementName.textContent = elementNames[count-1];

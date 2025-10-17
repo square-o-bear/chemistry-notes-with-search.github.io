@@ -1,6 +1,6 @@
 .element-visualizer {
     background-color: #111;
-    height: 100vh;
+    height: 125vh;
     overflow: hidden; /* Скрывает всё, что выходит за пределы контейнера */
     position: relative; /* Устанавливает контекст для абсолютного позиционирования */
 }
@@ -84,7 +84,7 @@
 /* Ядро атома */
 .nucleus {
     position: absolute;
-    top: 90%;
+    top: 15vh;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20px;
@@ -98,14 +98,14 @@
     border-radius: 50%;
     border: 2px solid #222;
     position: absolute;
-    top: 90%;
+    top: 15vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .electron {
     position: absolute;
-    top: 90%;
+    top: 15vh;
     left: 50%;
     width: calc(1.5*min(1vh, 1vw));
     height: calc(1.5*min(1vh, 1vw));
