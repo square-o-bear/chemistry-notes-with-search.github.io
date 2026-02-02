@@ -118,6 +118,12 @@ function parseFormula(formula) {
 function calculateMolarMass() {
   const input = document.getElementById('formula').value.trim();
   const resultDiv = document.getElementById('result');
+ 
+  // Сбрасываем высоту и делаем прозрачным перед обновлением
+  resultDiv.style.transition = 'none';
+  resultDiv.style.opacity = '0';
+  resultDiv.style.height = 'auto'; // Чтобы анимация высоты работала
+  resultDiv.style.overflow = 'hidden';
 
   if (!input) {
     resultDiv.textContent = 'Пожалуйста, введите химическую формулу.';
@@ -160,6 +166,11 @@ function calculateMolarMass() {
     resultDiv.textContent = `Ошибка: ${error.message}`;
     resultDiv.className = 'error';
   }
+
+  setTimeout(() => {
+    resultDiv.style.transition = '';
+    resultDiv.style.opacity = '1';
+  }, 0);
 }
 
 document.getElementById('formula').addEventListener('keypress', (e) => {
