@@ -310,12 +310,8 @@ function comparison(key, input) {
             score--;
     }
 
-    //if(score > 0) console.log(key, input, Math.max(score, 0)/maxLength)
-
     return Math.max(score, 0)/maxLength //*2/(Math.max(key.length, input.length)+minLength);
 }
-
-console.log(comparison("как", "какое-то"));
 
 async function finder() {
     if (search_input.value.trim() == "") {
