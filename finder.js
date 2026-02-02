@@ -282,7 +282,7 @@ const pages_to_search = {
     ],
 
     // MOLECULES
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules.html": [
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules/molecules.html": [
         {"what": "Малекула", "tear": 100},
         {"what": "молекула", "tear": 100},
         {"what": "атом", "tear": 50}

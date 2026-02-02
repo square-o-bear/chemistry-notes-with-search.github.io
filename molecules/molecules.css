@@ -1,0 +1,54 @@
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: 2px solid #b3e5fc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0288d1;
+}
+
+.center-section button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  background: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.center-section button:hover {
+  background: #0277bd;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  /*text-align: center;
+  min-height: 28px;*/
+  font-weight: bold;
+}
+
+.success {
+  color: #0277bd;
+}
+
+.error {
+  color: #c62828;
+}
+
+.example {
+  text-align: center;
+  font-size: 14px;
+  color: #546e7a;
+  margin-top: 10px;
+}

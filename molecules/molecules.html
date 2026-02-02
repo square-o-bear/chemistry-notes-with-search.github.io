@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Молекулы - Конспект по химии</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="molecules.css">
 </head>
 <body>
     <div class="container">
@@ -31,6 +32,13 @@
             <h2>Определение молекулы</h2>
             <p>Молекула — это наименьшая частица вещества, сохраняющая его химические свойства. Она состоит из двух или более атомов, соединённых химическими связями.</p>
             
+            <h2>Калькулятор массы молекулы</h2>
+                <input type="text" id="formula" placeholder="Например: C6H12O6, (NH4)2SO4, Uuo" autocomplete="off" />
+                <button onclick="calculateMolarMass()">Рассчитать молярную массу</button>
+                <div id="result"></div>
+            <script src="moleculesMass.js"></script>
+
+
             <h2>Строение молекул</h2>
             <p>Молекулы формируются за счёт:</p>
             <ul>
