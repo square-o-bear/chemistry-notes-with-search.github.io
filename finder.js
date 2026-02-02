@@ -349,6 +349,14 @@ async function finder() {
         search_results.appendChild(document.createElement("br"));
         link.href = el.link; // Ссылка на найденную страницу
         link.textContent = el.what;
+        link.style.transition = 'none';
+        link.style.opacity = '0';
+        link.style.height = 'auto'; // Чтобы анимация высоты работала
+        link.style.overflow = 'hidden';
+        setTimeout(() => {
+            link.style.transition = '';
+            link.style.opacity = '1';
+        }, 0);
     })
 
     if (search_results.children.length === 1) {
@@ -356,6 +364,14 @@ async function finder() {
         const noResults = document.createElement("div");
         noResults.className = "no-find-results";
         noResults.textContent = "Ничего не найдено"; 
+        noResults.style.transition = 'none';
+        noResults.style.opacity = '0';
+        noResults.style.height = 'auto'; // Чтобы анимация высоты работала
+        noResults.style.overflow = 'hidden';
+        setTimeout(() => {
+            noResults.style.transition = '';
+            noResults.style.opacity = '1';
+        }, 0);
         
         search_results.appendChild(noResults);
     } else {
