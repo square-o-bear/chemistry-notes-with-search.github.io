@@ -299,7 +299,7 @@ const pages_to_search = {
         {"what": "слияни", "tear": 90}
     ],
     // REACTIONS
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides.html": [
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxides.html": [
         {"what": "Оксиды", "tear": 100},
         {"what": "Амфотерные ", "tear": 50},
         {"what": "O", "tear": 10},

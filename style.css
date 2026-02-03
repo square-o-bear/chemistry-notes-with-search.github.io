@@ -385,6 +385,12 @@ tr:hover {
     transition: all 0.2s ease;
 }
 
+select {
+    background-color: #f9f9f9;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+}
+
 /* Адаптивность: для маленьких экранов */
 @media screen and (max-width: 768px) {
     table {
@@ -413,7 +419,7 @@ tr:hover {
 }
 
 
-/* 🌙 Тёмная тема 
+/* 🌙 Тёмная тема */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
@@ -498,7 +504,7 @@ tr:hover {
         color: #4a90e2;
         background-color: #333;
         border-color: #444;
-        box-shadow: 0px 4px 12px rgba(74, 144, 226, 0.3)
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
     }
 
     a:hover {
@@ -522,10 +528,42 @@ tr:hover {
         background-color: #333;
         border-color: #ffcccc;
         color: #d9534f;
-        box-shadow: 0px 4px 12px rgba(217, 83, 79, 0.5)
+        box-shadow: 0 4px 12px rgba(217, 83, 79, 0.5);
     }
 
     .no-find-results::before {
         color: #d9534f;
     }
-}*/
+
+    select {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+
+    /* === СТИЛИ ДЛЯ ТАБЛИЦ В ТЁМНОЙ ТЕМЕ === */
+    table {
+        background-color: #2d2d2d;
+        border-color: #444;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    th {
+        background-color: #3a7bc8;
+        color: white;
+        border-bottom: 1px solid #555;
+    }
+
+    td {
+        color: #e0e0e0;
+        border-bottom: 1px solid #444;
+    }
+
+    tr:nth-child(even) {
+        background-color: #252525;
+    }
+
+    tr:hover {
+        background-color: #333;
+        transform: scale(1.005);
+    }
+}

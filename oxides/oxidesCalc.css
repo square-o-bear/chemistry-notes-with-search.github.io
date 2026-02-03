@@ -43,7 +43,6 @@
 .result-box {
     margin-top: 20px;
     padding: 14px;
-    /*background-color: #e3f2fd;*/
     border-left: 5px solid #4a90e2;
     border-radius: 6px;
     font-size: 18px;
@@ -62,4 +61,45 @@
 
 .comment-box strong {
     color: #333;
+}
+
+/* 🌙 ТЁМНАЯ ТЕМА — Адаптация калькулятора */
+@media (prefers-color-scheme: dark) {
+    .oxide-calculator {
+        background-color: #2d2d2d;
+        border-color: #444;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .oxide-calculator label {
+        color: #e0e0e0;
+    }
+
+    .oxide-calculator select {
+        background-color: #333;
+        color: #e0e0e0;
+        border-color: #555;
+    }
+
+    .oxide-calculator select:hover,
+    .oxide-calculator select:focus {
+        background-color: #444;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    }
+
+    .result-box {
+        color: #e0e0e0;
+        background-color: #333;
+        border-left-color: #4a90e2;
+    }
+
+    .comment-box {
+        background-color: #333;
+        color: #aaa;
+    }
+
+    .comment-box strong {
+        color: #e0e0e0;
+    }
 }
