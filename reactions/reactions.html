@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Химические реакции - Конспект по химии</title>
     <link rel="stylesheet" href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/style.css">
-    <link rel="stylesheet" href="reactionsCreate.css"> <!-- Дополнительный локальный стиль -->
+    <link rel="stylesheet" href="reactionsCalcs.css">
 </head>
 <body>
     <div class="container">
@@ -41,6 +41,28 @@
                 <li>Катализаторы (например, никель для водородно-углеродных реакций)</li>
             </ul>
             <p><strong>Пример:</strong> Синтез аммиака (N₂ + 3H₂ → Fe катализатор 2NH₃).</p>
+            <!-- Калькулятор реакции соединения -->
+            <div class="reaction-builder">
+                <h4>Постройте реакцию соединения</h4>
+                
+                <div class="input-group">
+                    <label for="metal-select">Металл:</label>
+                    <select id="metal-select">
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="nonmetal-select">Неметалл:</label>
+                    <select id="nonmetal-select">
+                    </select>
+                </div>
+
+                <div class="result-box">
+                    <strong>Реакция:</strong>
+                    <p id="reaction-result">—</p>
+                </div>
+            </div>
+            <script src="mergerCalc.js"></script>
 
             <h3>2. Реакции разложения</h3>
             <p><strong>Определение:</strong> Сложное вещество распадается на более простые компоненты.</p>
@@ -118,5 +140,5 @@
     </div>
     
     <script src="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/finder.js"></script>
-</body>
+    </body>
 </html>

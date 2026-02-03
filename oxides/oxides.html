@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Конспект по химии — Оксиды</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="oxidesCalc.css">
 </head>
 <body>
     <div class="container">
@@ -77,6 +78,23 @@
                 <li>С щёлочью: <em>ZnO + 2NaOH + H₂O → Na₂[Zn(OH)₄]</em></li>
             </ul>
 
+            <h2>Калькулятор оксидов</h2>
+            <label for="element-select">Выберите элемент:</label>
+            <select id="element-select">
+            </select>
+
+            <div class="result-box">
+                <strong>Формула оксида:</strong>
+                <span id="oxide-result">—</span>
+            </div>
+
+            <div class="comment-box">
+                <strong>Пояснение:</strong>
+                <p id="oxide-comment">Выберите элемент, чтобы увидеть формулу его оксида и пояснение.</p>
+            </div>
+            <script src="oxidesCalc.js"></script>
+
+
             <h2>Примеры важных оксидов</h2>
             <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
                 <tr>
@@ -118,8 +136,7 @@
         <!-- Правая секция - навигация -->
         <div class="right-section">
             <div class="pages-nav">
-                <!-- Рекомендации или навигация по другим темам -->
-                <script src="recommendations.js"></script>
+                <script src="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/recommendations.js"></script>
             </div>
         </div>
     </div>

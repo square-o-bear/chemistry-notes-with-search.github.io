@@ -1,0 +1,65 @@
+/* СТИЛИ ДЛЯ КАЛЬКУЛЯТОРА ОКСИДОВ */
+.oxide-calculator {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    margin: 25px 0;
+    max-width: 600px;
+}
+
+.oxide-calculator label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.oxide-calculator select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.oxide-calculator select:hover {
+    border-color: #3a7bc8;
+    background-color: #f5f8ff;
+}
+
+.oxide-calculator select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 14px;
+    /*background-color: #e3f2fd;*/
+    border-left: 5px solid #4a90e2;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #1a1a1a;
+}
+
+.comment-box {
+    margin-top: 15px;
+    padding: 14px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.comment-box strong {
+    color: #333;
+}

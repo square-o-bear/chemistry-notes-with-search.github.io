@@ -295,7 +295,15 @@ const pages_to_search = {
     // REACTIONS
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html": [
         {"what": "Реакции", "tear": 0},
-        {"what": "реакци", "tear": 100}
+        {"what": "реакци", "tear": 100},
+        {"what": "слияни", "tear": 90}
+    ],
+    // REACTIONS
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides.html": [
+        {"what": "Оксиды", "tear": 100},
+        {"what": "Амфотерные ", "tear": 50},
+        {"what": "O", "tear": 10},
+        {"what": "O", "tear": 10}
     ]
 }
 
