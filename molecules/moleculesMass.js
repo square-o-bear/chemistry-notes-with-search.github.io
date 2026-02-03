@@ -57,7 +57,7 @@ const atomicMasses = {
 function parseFormula(formula) {
 
   let fullMulti = 1;
-  while ('1' <= formula[0] && formula[0] <= '9') {
+  while ('0' <= formula[0] && formula[0] <= '9') {
     fullMulti *= parseInt(formula[0]);
     formula = formula.slice(1);
   }

@@ -52,7 +52,7 @@ body {
 
 .pages-nav h3 {
     margin-bottom: 15px;
-    color: #e0e0e0;
+    color: #6c757d;
     text-align: center;
     font-size: 18px;
 }
@@ -341,7 +341,7 @@ a:hover {
     }
 }
 
-/* СТИЛИ ДЛЯ ТАБЛИЦЫ ОКСИДОВ */
+/* СТИЛИ ДЛЯ ТАБЛИЦ */
 table {
     width: 100%;
     border-collapse: collapse;
