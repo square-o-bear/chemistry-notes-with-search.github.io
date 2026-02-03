@@ -341,6 +341,77 @@ a:hover {
     }
 }
 
+/* СТИЛИ ДЛЯ ТАБЛИЦЫ ОКСИДОВ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+th {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 14px;
+}
+
+td {
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fbff;
+}
+
+tr:hover {
+    background-color: #edf5ff;
+    transform: scale(1.005);
+    transition: all 0.2s ease;
+}
+
+/* Адаптивность: для маленьких экранов */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 15px;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px 8px;
+    }
+
+    th {
+        font-size: 13px;
+    }
+}
+
 
 /* 🌙 Тёмная тема 
 @media (prefers-color-scheme: dark) {
