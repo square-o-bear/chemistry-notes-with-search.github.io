@@ -1,14 +1,21 @@
-// Get the current page in notes
+// Some tegs
+const pagesNav = document.getElementsByClassName('right-section')[0];
+const search_input = document.getElementById("search-input")
+const search_button = document.getElementById("search-button")
+const search_results = document.getElementById("search-results")
+
+// Set values
+const recomend = ['index.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
 let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('');
+let lastVisited = [];
 
 if (localpage != window.location.href) {
-    console.log(localpage);
-    let lastVisited = JSON.parse(localStorage.getItem('last'));
+    lastVisited = JSON.parse(localStorage.getItem('last'));
     if (localStorage.getItem('last') === null) {
         lastVisited = [];
     }
-    lastVisited = lastVisited.filter((page) => page !== localpage);
-    lastVisited.unshift(localpage);
+    lastVisited = lastVisited.filter((page) => (page !== localpage) && !(page in recomend));
+    if (!(localpage in recomend)) lastVisited.unshift(localpage);
     lastVisited.slice(0, 11);
     localStorage.setItem('last', JSON.stringify(lastVisited));
 }
@@ -16,14 +23,9 @@ else {
     console.warn('strange URL. Not started at "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/"');
 }
 
-// Some tegs
-const pagesNav = document.getElementsByClassName('right-section')[0];
-const search_input = document.getElementById("search-input")
-const search_button = document.getElementById("search-button")
-const search_results = document.getElementById("search-results")
 
 // search keys for page
-const pages_to_search = {
+const pages_to_nav = {
     // INDEX
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html": [
         {"what": "Главное", "tear": 100},
@@ -363,21 +365,21 @@ async function finder() {
     if (!request) return;
     search_results.innerHTML = "<p id='please-wait-result'>Подождите идёт поиск...</p>";
 
-    for (let page_index = 0; page_index < Object.values(pages_to_search).length; ++page_index) {
+    for (let page_index = 0; page_index < Object.values(pages_to_nav).length; ++page_index) {
         let crut = 0;
-        let allKeysWords = Object.values(pages_to_search)[page_index].map(el => el.what.toLowerCase());
+        let allKeysWords = Object.values(pages_to_nav)[page_index].map(el => el.what.toLowerCase());
 
         for (let keyWordIndex = 0; keyWordIndex < allKeysWords.length; ++keyWordIndex) {
             for (let requestWordIndex = 0; requestWordIndex < request.length; ++requestWordIndex) {
-                crut += Object.values(pages_to_search)[page_index][keyWordIndex].tear * comparison(allKeysWords[keyWordIndex], request[requestWordIndex]);
+                crut += Object.values(pages_to_nav)[page_index][keyWordIndex].tear * comparison(allKeysWords[keyWordIndex], request[requestWordIndex]);
             }
         }
 
         if (crut >= 10) {
             search_result.push({
-                what: Object.values(pages_to_search)[page_index][0].what,
+                what: Object.values(pages_to_nav)[page_index][0].what,
                 tear: crut,
-                link: Object.keys(pages_to_search)[page_index]
+                link: Object.keys(pages_to_nav)[page_index]
             });
         }
     }
@@ -425,21 +427,24 @@ search_input.addEventListener("keydown", function(event) {
     }
 });
 
-// theme changer / Рекоминдации / Последние просмотренные
-pagesNav.innerHTML =
+// Добавление рекомендаций
+let pageNavHTML =
 `<div class="pages-nav">
     <button id='themeChange'>☀️&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp🌙</button>
     <h3>Рекоминдуем</h3>
     <ul class="pages-list">
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html">Главная</a></li>
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/atom.html">Атом</a></li>
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules/molecules.html">Молекулы</a></li>
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/periodic/periodic.html">Периодическая система</a></li>
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html">Химические реакции</a></li>
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxides.html">Оксиды</a></li>
-        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/hydroxides/hydroxides.html">Гидроксиды</a></li>
-    </ul>
-</div>`;
+ `
+
+recomend.forEach((page) => {pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav['https://square-o-bear.github.io/chemistry-notes-with-search.github.io/'+page][0].what}</a></li>`})
+if (lastVisited.length > 0) {
+    pageNavHTML += `<br><h3>Последние</h3>`
+    lastVisited.forEach((page) => {
+        pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav['https://square-o-bear.github.io/chemistry-notes-with-search.github.io/'+page][0].what}</a></li>`
+    })
+}
+pageNavHTML += `</ul></div>`
+// theme changer / Рекоминдации / Последние просмотренные
+pagesNav.innerHTML = pageNavHTML
 
 const themeChanger = document.getElementById('themeChange')
 if (localStorage.getItem('theme') === 'dark') {
