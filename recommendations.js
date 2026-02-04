@@ -18,6 +18,18 @@ const themeChanger = document.getElementById('themeChange')
 if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.setAttribute('theme', 'dark');
 }
+const allTag = document.querySelectorAll('*');
+console.log(allTag)
+allTag.forEach((element) => {
+    element.style.transition = 'noone';
+});
+
+setTimeout(() => {
+    allTag.forEach((element) => {
+        element.style.transition = 'all 0.3s ease'
+        console.log(element)
+    });
+}, 0);
 
 themeChanger.addEventListener("click", (e) => {
     let newTheme = (document.documentElement.getAttribute('theme') === 'dark' ? 'light' : 'dark')

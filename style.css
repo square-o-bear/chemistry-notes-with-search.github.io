@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    transition: none;
 }
 
 body {
@@ -422,6 +423,12 @@ button {
     th {
         font-size: 13px;
     }
+}
+
+#themeChange {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
 }
 
 
