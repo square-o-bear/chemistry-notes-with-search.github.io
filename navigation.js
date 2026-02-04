@@ -14,7 +14,7 @@ if (localpage != window.location.href) {
     if (localStorage.getItem('last') === null) {
         lastVisited = [];
     }
-    lastVisited = lastVisited.filter((page) => (page !== localpage) && !(page in recomend));
+    lastVisited = lastVisited.filter((page) => page !== localpage).filter((page) => !(recomend.includes(page)));
     if (!(localpage in recomend)) lastVisited.unshift(localpage);
     lastVisited.slice(0, 11);
     localStorage.setItem('last', JSON.stringify(lastVisited));
@@ -455,7 +455,7 @@ allTag.forEach((element) => {
 
 setTimeout(() => {allTag.forEach((element) => element.style.transition = 'all 0.3s ease');}, 0);
 
-themeChanger.addEventListener("click", (e) => {
+themeChanger.addEventListener("click", () => {
     let newTheme = (document.documentElement.getAttribute('theme') === 'dark' ? 'light' : 'dark');
     document.documentElement.setAttribute('theme', newTheme);
     localStorage.setItem('theme', newTheme);
