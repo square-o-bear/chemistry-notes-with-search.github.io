@@ -391,6 +391,12 @@ select {
     border-radius: 5px;
 }
 
+button {
+    background-color: #f9f9f9;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+}
+
 /* Адаптивность: для маленьких экранов */
 @media screen and (max-width: 768px) {
     table {
@@ -420,7 +426,7 @@ select {
 
 
 /* 🌙 Тёмная тема */
-@media (prefers-color-scheme: dark) {
+[theme="dark"] {
     body {
         background-color: #121212;
         color: #e0e0e0;
@@ -536,6 +542,11 @@ select {
     }
 
     select {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+
+    button {
         background-color: #1e1e1e;
         color: #e0e0e0;
     }

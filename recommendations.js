@@ -1,7 +1,8 @@
 const pagesNav = document.getElementsByClassName('right-section')[0];
 
-pagesNav.innerHTML = `
-<div class="pages-nav">
+pagesNav.innerHTML =
+`<div class="pages-nav">
+    <button id='themeChange'>☀️ / 🌙</button>
     <h3>Рекоминдуем</h3>
     <ul class="pages-list">
         <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html">Главная</a></li>
@@ -12,3 +13,14 @@ pagesNav.innerHTML = `
         <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxides.html">Оксиды</a></li>
     </ul>
 </div>`
+
+const themeChanger = document.getElementById('themeChange')
+if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('theme', 'dark');
+}
+
+themeChanger.addEventListener("click", (e) => {
+    let newTheme = (document.documentElement.getAttribute('theme') === 'dark' ? 'light' : 'dark')
+    document.documentElement.setAttribute('theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+})

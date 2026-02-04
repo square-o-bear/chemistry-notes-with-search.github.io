@@ -58,7 +58,7 @@
 }
 
 /* 🌙 ТЁМНАЯ ТЕМА — Адаптация калькулятора реакций */
-@media (prefers-color-scheme: dark) {
+[theme="dark"] {
     .reaction-builder {
         background-color: #2d2d2d;
         border-color: #444;
