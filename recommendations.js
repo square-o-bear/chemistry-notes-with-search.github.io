@@ -2,7 +2,7 @@ const pagesNav = document.getElementsByClassName('right-section')[0];
 
 pagesNav.innerHTML =
 `<div class="pages-nav">
-    <button id='themeChange'>☀️ / 🌙</button>
+    <button id='themeChange'>☀️&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp🌙</button>
     <h3>Рекоминдуем</h3>
     <ul class="pages-list">
         <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html">Главная</a></li>
@@ -11,6 +11,7 @@ pagesNav.innerHTML =
         <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/periodic/periodic.html">Периодическая система</a></li>
         <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html">Химические реакции</a></li>
         <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxides.html">Оксиды</a></li>
+        <li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/hydroxides/hydroxides.html">Гидроксиды</a></li>
     </ul>
 </div>`
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гидроксиды — Конспект по химии</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="hydroxidesCalc.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Левая секция - поиск -->
+        <div class="left-section">
+            <div class="search-container">
+                <input type="text" placeholder="Поиск по конспекту..." id="search-input">
+                <button id="search-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="search-results">
+                <!-- Результаты поиска -->
+            </div>
+        </div>
+        
+        <!-- Центральная секция - основной контент -->
+        <div class="center-section">
+            <h1>Гидроксиды — Конспект по химии</h1>
+
+            <h2>Что такое гидроксиды?</h2>
+            <p><strong>Гидроксиды</strong> — это сложные вещества, состоящие из катиона металла (или NH₄⁺) и гидроксид-аниона OH⁻.</p>
+            <p>Общая формула: <em>Ме(OH)<sub>n</sub></em>, где <em>n</em> — валентность металла.</p>
+
+            <h2>Классификация гидроксидов</h2>
+            <ul>
+                <li><strong>Растворимые (щёлочи)</strong> — гидроксиды щелочных и щелочноземельных металлов. Пример: NaOH, KOH, Ca(OH)₂.</li>
+                <li><strong>Нерастворимые основания</strong> — не растворяются в воде. Пример: Fe(OH)₂, Cu(OH)₂.</li>
+                <li><strong>Амфотерные гидроксиды</strong> — проявляют как основные, так и кислотные свойства. Пример: Al(OH)₃, Zn(OH)₂, Cr(OH)₃.</li>
+            </ul>
+
+            <h2>Получение гидроксидов</h2>
+            <ol>
+                <li><strong>Активные металлы + вода:</strong><br>
+                    <em>2Na + 2H₂O → 2NaOH + H₂↑</em>
+                </li>
+                <li><strong>Оксиды активных металлов + вода:</strong><br>
+                    <em>CaO + H₂O → Ca(OH)₂</em>
+                </li>
+                <li><strong>Соль + щёлочь:</strong><br>
+                    <em>FeCl₃ + 3NaOH → Fe(OH)₃↓ + 3NaCl</em>
+                </li>
+            </ol>
+
+            <h2>Химические свойства</h2>
+            <p><strong>Щёлочи:</strong></p>
+            <ul>
+                <li>С кислотами: <em>NaOH + HCl → NaCl + H₂O</em> (нейтрализация)</li>
+                <li>С кислотными оксидами: <em>2NaOH + CO₂ → Na₂CO₃ + H₂O</em></li>
+                <li>С солями: <em>2NaOH + CuSO₄ → Cu(OH)₂↓ + Na₂SO₄</em></li>
+            </ul>
+
+            <p><strong>Амфотерные гидроксиды:</strong></p>
+            <ul>
+                <li>С кислотой: <em>Zn(OH)₂ + 2HCl → ZnCl₂ + 2H₂O</em></li>
+                <li>С щёлочью: <em>Zn(OH)₂ + 2NaOH → Na₂[Zn(OH)₄]</em></li>
+            </ul>
+
+            <h2>Калькулятор гидроксидов</h2>
+            <label for="metal-select">Выберите металл:</label>
+            <select id="metal-select"><option value="">— Выберите металл —</option></select>
+
+            <div class="result-box">
+                <strong>Формула гидроксида:</strong>
+                <span id="hydroxide-result">—</span>
+            </div>
+
+            <div class="comment-box">
+                <strong>Пояснение:</strong>
+                <p id="explanation">Выберите металл, чтобы увидеть формулу его гидроксида и тип соединения.</p>
+            </div>
+
+            <script src="hydroxidesCalc.js"></script>
+
+            <h2>Примеры важных гидроксидов</h2>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+                <tr>
+                    <th>Формула</th>
+                    <th>Название</th>
+                    <th>Тип</th>
+                    <th>Применение</th>
+                </tr>
+                <tr>
+                    <td>NaOH</td>
+                    <td>Гидроксид натрия</td>
+                    <td>Щёлочь</td>
+                    <td>Производство мыла, бумаги, очистка труб</td>
+                </tr>
+                <tr>
+                    <td>KOH</td>
+                    <td>Гидроксид калия</td>
+                    <td>Щёлочь</td>
+                    <td>Электролит в аккумуляторах</td>
+                </tr>
+                <tr>
+                    <td>Ca(OH)₂</td>
+                    <td>Гашёная известь</td>
+                    <td>Малорастворимый</td>
+                    <td>Строительство, дезинфекция</td>
+                </tr>
+                <tr>
+                    <td>Al(OH)₃</td>
+                    <td>Гидроксид алюминия</td>
+                    <td>Амфотерный</td>
+                    <td>Антацид, осветление воды</td>
+                </tr>
+            </table>
+
+            <h2>Заключение</h2>
+            <p>Гидроксиды — ключевой класс веществ в неорганической химии. Они лежат в основе понимания кислотно-основных реакций, используются в промышленности, медицине и повседневной жизни. Умение определять тип гидроксида помогает предсказать его поведение в реакциях.</p>
+        </div>
+        
+        <!-- Правая секция - навигация -->
+        <div class="right-section">
+            <script src="../recommendations.js"></script>
+        </div>
+    </div>
+    
+    <script src="../finder.js"></script>
+</body>
+</html>

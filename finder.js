@@ -298,12 +298,20 @@ const pages_to_search = {
         {"what": "реакци", "tear": 100},
         {"what": "слияни", "tear": 90}
     ],
-    // REACTIONS
+    // OXIDES
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxides.html": [
-        {"what": "Оксиды", "tear": 100},
-        {"what": "Амфотерные ", "tear": 50},
+        {"what": "Оксиды", "tear": 0},
+        {"what": "оксид", "tear": 100},
+        {"what": "амфотерные ", "tear": 50},
         {"what": "O", "tear": 10},
         {"what": "O", "tear": 10}
+    ],
+    // HYDROXIDES
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/hydroxides/hydroxides.html": [
+        {"what": "Гидроксиды", "tear": 0},
+        {"what": "гидроксид", "tear": 100},
+        {"what": "Амфотерные ", "tear": 50},
+        {"what": "OH", "tear": 10},
     ]
 }
 
