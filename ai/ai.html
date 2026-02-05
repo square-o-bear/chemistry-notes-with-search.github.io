@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ чат по химии — Конспект по химии</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="aiChat.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Левая секция - поиск -->
+        <div class="left-section">
+            <div class="search-container">
+                <input type="text" placeholder="Поиск по конспекту..." id="search-input">
+                <button id="search-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="search-results">
+                <!-- Результаты поиска будут добавлены скриптом -->
+            </div>
+        </div>
+        
+        <!-- Центральная секция - чат с ИИ -->
+        <div class="center-section">
+            <h1>Чат с ИИ по химии</h1>
+            <div class="chat-container" id="chat-container">
+                <div class="message ai-message">
+                    Привет! Я — ваш помощник по химии. Спрашивайте о оксидах, реакциях, свойствах веществ и многом другом.
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Введите ваш вопрос...">
+                <button id="send-button">Отправить</button>
+            </div>
+        </div>
+        <script src="aiChat.js"></script>
+        
+        <!-- Правая секция - навигация -->
+        <div class="right-section"></div>
+    </div>
+    <script src="../navigation.js"></script>
+</body>
+</html>
