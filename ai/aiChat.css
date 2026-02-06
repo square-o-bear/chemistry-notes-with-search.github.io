@@ -1,3 +1,5 @@
+/* ai/aiChat.css */
+
 .center-section {
     display: flex;
     flex-direction: column;
@@ -63,4 +65,45 @@
 
 #send-button:hover {
     background-color: #187bcd;
+}
+
+/* 🌙 Тёмная тема — стили для AI-чата */
+[theme="dark"] {
+    .center-section {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    .chat-container {
+        background-color: #333;
+        border-radius: 10px;
+    }
+
+    .user-message {
+        background-color: #4a90e2;
+        color: white;
+    }
+
+    .ai-message {
+        background-color: #444;
+        color: #e0e0e0;
+    }
+
+    #user-input {
+        background-color: #333;
+        color: #e0e0e0;
+        border-color: #555;
+    }
+
+    #user-input::placeholder {
+        color: #aaa;
+    }
+
+    #send-button {
+        background-color: #4a90e2;
+    }
+
+    #send-button:hover {
+        background-color: #3a7bc8;
+    }
 }
