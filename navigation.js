@@ -38,7 +38,8 @@ const pages_to_nav = {
         {"what": "Атом", "tear": 100},
         {"what": "малекул", "tear": 50}
     ],
-    // ELEMENTS
+
+    // ELEMENTS — 2–4 периоды (уже были)
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/H.html": [
         { "what": "Водород", "tear": 100 },
         { "what": "H", "tear": 100 }
@@ -84,7 +85,7 @@ const pages_to_nav = {
         { "what": "Na", "tear": 100 }
     ],
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Mg.html": [
-        { "what": "Магния", "tear": 100 },
+        { "what": "Магний", "tear": 100 },
         { "what": "Mg", "tear": 100 }
     ],
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Al.html": [
@@ -129,7 +130,7 @@ const pages_to_nav = {
         { "what": "Ti", "tear": 100 }
     ],
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/V.html": [
-        { "what": "Вандий", "tear": 100 },
+        { "what": "Ванадий", "tear": 100 },
         { "what": "V", "tear": 100 }
     ],
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Cr.html": [
@@ -184,159 +185,113 @@ const pages_to_nav = {
         { "what": "Криптон", "tear": 100 },
         { "what": "Kr", "tear": 100 }
     ],
-    // 6-ой период и лантаноиды
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/La.html": [
-        { "what": "Лантан", "tear": 100 },
-        { "what": "La", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Rb.html": [
+        { "what": "Рубидий", "tear": 100 },
+        { "what": "Rb", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ce.html": [
-        { "what": "Церий", "tear": 100 },
-        { "what": "Ce", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Sr.html": [
+        { "what": "Стронций", "tear": 100 },
+        { "what": "Sr", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Pr.html": [
-        { "what": "Празеодим", "tear": 100 },
-        { "what": "Pr", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Y.html": [
+        { "what": "Иттрий", "tear": 100 },
+        { "what": "Y", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Nd.html": [
-        { "what": "Неодим", "tear": 100 },
-        { "what": "Nd", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Zr.html": [
+        { "what": "Цирконий", "tear": 100 },
+        { "what": "Zr", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Pm.html": [
-        { "what": "Прометий", "tear": 100 },
-        { "what": "Pm", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Nb.html": [
+        { "what": "Ниобий", "tear": 100 },
+        { "what": "Nb", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Sm.html": [
-        { "what": "Самарий", "tear": 100 },
-        { "what": "Sm", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Mo.html": [
+        { "what": "Молибден", "tear": 100 },
+        { "what": "Mo", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Eu.html": [
-        { "what": "Европий", "tear": 100 },
-        { "what": "Eu", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Tc.html": [
+        { "what": "Технеций", "tear": 100 },
+        { "what": "Tc", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Gd.html": [
-        { "what": "Гадолиний", "tear": 100 },
-        { "what": "Gd", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ru.html": [
+        { "what": "Рутений", "tear": 100 },
+        { "what": "Ru", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Tb.html": [
-        { "what": "Тербий", "tear": 100 },
-        { "what": "Tb", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Rh.html": [
+        { "what": "Родий", "tear": 100 },
+        { "what": "Rh", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Dy.html": [
-        { "what": "Диспрозий", "tear": 100 },
-        { "what": "Dy", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Pd.html": [
+        { "what": "Палладий", "tear": 100 },
+        { "what": "Pd", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ho.html": [
-        { "what": "Гольмий", "tear": 100 },
-        { "what": "Ho", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ag.html": [
+        { "what": "Серебро", "tear": 100 },
+        { "what": "Ag", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Er.html": [
-        { "what": "Эрбий", "tear": 100 },
-        { "what": "Er", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Cd.html": [
+        { "what": "Кадмий", "tear": 100 },
+        { "what": "Cd", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Tm.html": [
-        { "what": "Тулий", "tear": 100 },
-        { "what": "Tm", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/In.html": [
+        { "what": "Индий", "tear": 100 },
+        { "what": "In", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Yb.html": [
-        { "what": "Иттербий", "tear": 100 },
-        { "what": "Yb", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Sn.html": [
+        { "what": "Олово", "tear": 100 },
+        { "what": "Sn", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Lu.html": [
-        { "what": "Лютеций", "tear": 100 },
-        { "what": "Lu", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Sb.html": [
+        { "what": "Сурьма", "tear": 100 },
+        { "what": "Sb", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Hf.html": [
-        { "what": "Гафний", "tear": 100 },
-        { "what": "Hf", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Te.html": [
+        { "what": "Теллур", "tear": 100 },
+        { "what": "Te", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ta.html": [
-        { "what": "Тантал", "tear": 100 },
-        { "what": "Ta", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/I.html": [
+        { "what": "Йод", "tear": 100 },
+        { "what": "I", "tear": 100 }
     ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/W.html": [
-        { "what": "Вольфрам", "tear": 100 },
-        { "what": "W", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Re.html": [
-        { "what": "Рений", "tear": 100 },
-        { "what": "Re", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Os.html": [
-        { "what": "Осмий", "tear": 100 },
-        { "what": "Os", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Ir.html": [
-        { "what": "Иридий", "tear": 100 },
-        { "what": "Ir", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Pt.html": [
-        { "what": "Платина", "tear": 100 },
-        { "what": "Pt", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Au.html": [
-        { "what": "Золото", "tear": 100 },
-        { "what": "Au", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Hg.html": [
-        { "what": "Ртуть", "tear": 100 },
-        { "what": "Hg", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Tl.html": [
-        { "what": "Таллий", "tear": 100 },
-        { "what": "Tl", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Pb.html": [
-        { "what": "Свинец", "tear": 100 },
-        { "what": "Pb", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Bi.html": [
-        { "what": "Висмут", "tear": 100 },
-        { "what": "Bi", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Po.html": [
-        { "what": "Полоний", "tear": 100 },
-        { "what": "Po", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/At.html": [
-        { "what": "Астат", "tear": 100 },
-        { "what": "At", "tear": 100 }
-    ],
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Rn.html": [
-        { "what": "Радон", "tear": 100 },
-        { "what": "Rn", "tear": 100 }
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/Xe.html": [
+        { "what": "Ксенон", "tear": 100 },
+        { "what": "Xe", "tear": 100 }
     ],
 
     // MOLECULES
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/molecules/molecules.html": [
-        {"what": "Малекула", "tear": 100},
+        {"what": "Молекула", "tear": 100},
         {"what": "молекула", "tear": 100},
         {"what": "атом", "tear": 50}
     ],
-    // PERSONAL
+
+    // PERIODIC TABLE
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/periodic/periodic.html": [
-        {"what": "Переодическая система", "tear": 100},
+        {"what": "Периодическая система", "tear": 100},
         {"what": "Менделеев", "tear": 70}
     ],
+
     // REACTIONS
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/reactions/reactions.html": [
         {"what": "Реакции", "tear": 0},
         {"what": "реакци", "tear": 100},
         {"what": "слияни", "tear": 90}
     ],
+
     // OXIDES
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxides.html": [
         {"what": "Оксиды", "tear": 0},
         {"what": "оксид", "tear": 100},
-        {"what": "амфотерные ", "tear": 50},
-        {"what": "O", "tear": 10},
+        {"what": "амфотерные", "tear": 50},
         {"what": "O", "tear": 10}
     ],
+
     // HYDROXIDES
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/hydroxides/hydroxides.html": [
         {"what": "Гидроксиды", "tear": 0},
         {"what": "гидроксид", "tear": 100},
-        {"what": "Амфотерные ", "tear": 50},
-        {"what": "OH", "tear": 10},
+        {"what": "амфотерные", "tear": 50},
+        {"what": "OH", "tear": 10}
     ],
 
     // AI
@@ -344,9 +299,10 @@ const pages_to_nav = {
         {"what": "ИИ Ассистент", "tear": 0},
         {"what": "ии", "tear": 100},
         {"what": "ai", "tear": 100},
-        {"what": "ассистент", "tear": 100},
-    ],
-}
+        {"what": "ассистент", "tear": 100}
+    ]
+};
+
 
 // functions to find
 function comparison(key, input) {
