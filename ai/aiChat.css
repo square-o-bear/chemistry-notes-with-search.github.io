@@ -35,6 +35,7 @@
     align-self: flex-start;
     background-color: #ddd;
     color: black;
+    white-space: pre-line;
 }
 
 .input-area {

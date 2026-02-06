@@ -5,7 +5,7 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 
 // Set values
-const recomend = ['index.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
+const recomend = ['index.html', 'ai/ai.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
 let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('');
 let lastVisited = [];
 
@@ -28,7 +28,8 @@ else {
 const pages_to_nav = {
     // INDEX
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/index.html": [
-        {"what": "Главное", "tear": 100},
+        {"what": "Главное", "tear": 0},
+        {"what": "главн", "tear": 100},
         {"what": "хими", "tear": 100}
     ],
 
@@ -336,7 +337,15 @@ const pages_to_nav = {
         {"what": "гидроксид", "tear": 100},
         {"what": "Амфотерные ", "tear": 50},
         {"what": "OH", "tear": 10},
-    ]
+    ],
+
+    // AI
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/ai/ai.html": [
+        {"what": "ИИ Ассистент", "tear": 0},
+        {"what": "ии", "tear": 100},
+        {"what": "ai", "tear": 100},
+        {"what": "ассистент", "tear": 100},
+    ],
 }
 
 // functions to find

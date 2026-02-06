@@ -398,8 +398,7 @@ select {
     transition: all 0.3s ease;
 }
 
-select:focus {
-    border-color: #3a7bc8;
+select:focus { /* 1e90ff */
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
 }
 
