@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатория — Алхимическая машина</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="laboratory.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Левая секция - поиск -->
+        <div class="left-section">
+            <div class="search-container">
+                <input type="text" placeholder="Поиск по конспекту..." id="search-input">
+                <button id="search-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+
+        <!-- Центральная секция - основной контент -->
+        <div class="center-section">
+            <h1>🧪 Лаборатория: Алхимическая Машина</h1>
+
+            <p>Перетащите колбы с элементами в левый и правый отсек машины, нажмите «СМЕШАТЬ» — и узнайте, что получится!</p>
+            <p><em>Подсказка: попробуйте H + O, Na + Cl, C + O₂…</em></p>
+
+            <div class="lab-container">
+                <div class="flasks-top" id="flasks-top">
+                    <div class="flask H" data-element="H" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">H</span>
+                        <span class="flask-label">Водород</span>
+                    </div>
+                    <div class="flask O" data-element="O" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">O</span>
+                        <span class="flask-label">Кислород</span>
+                    </div>
+                    <div class="flask C" data-element="C" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">C</span>
+                        <span class="flask-label">Углерод</span>
+                    </div>
+                    <div class="flask N" data-element="N" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">N</span>
+                        <span class="flask-label">Азот</span>
+                    </div>
+                    <div class="flask Na" data-element="Na" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">Na</span>
+                        <span class="flask-label">Натрий</span>
+                    </div>
+                    <div class="flask Cl" data-element="Cl" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">Cl</span>
+                        <span class="flask-label">Хлор</span>
+                    </div>
+                    <div class="flask Fe" data-element="Fe" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">Fe</span>
+                        <span class="flask-label">Железо</span>
+                    </div>
+                    <div class="flask Au" data-element="Au" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">Au</span>
+                        <span class="flask-label">Золото</span>
+                    </div>
+                    <div class="flask Ag" data-element="Ag" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">Ag</span>
+                        <span class="flask-label">Серебро</span>
+                    </div>
+                    <div class="flask Cu" data-element="Cu" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">Cu</span>
+                        <span class="flask-label">Медь</span>
+                    </div>
+                    <div class="flask S" data-element="S" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">S</span>
+                        <span class="flask-label">Сера</span>
+                    </div>
+                    <div class="flask P" data-element="P" draggable="true">
+                        <div class="flask-liquid"></div>
+                        <span class="flask-symbol">P</span>
+                        <span class="flask-label">Фосфор</span>
+                    </div>
+                </div>
+
+                <div class="alchemy-machine">
+                    <h2>🔬 Алхимическая Машина</h2>
+
+                    <div class="machine-flasks">
+                        <div class="pipes" id="pipes">
+                            <div class="pipe-left">
+                                <div class="pipe-flow left-pipe" id="flow-left"></div>
+                            </div>
+                            <div class="pipe-right">
+                                <div class="pipe-flow right-pipe" id="flow-right"></div>
+                            </div>
+                            <div class="pipe-center">
+                                <div class="pipe-flow center-pipe" id="flow-center"></div>
+                            </div>
+                        </div>
+                        <div class="machine-flask" id="flask-left">
+                            <div class="machine-liquid" id="liquid-left"></div>
+                            <div class="machine-flask-label" id="label-left">Пусто</div>
+                        </div>
+                        <div class="machine-flask" id="flask-right">
+                            <div class="machine-liquid" id="liquid-right"></div>
+                            <div class="machine-flask-label" id="label-right">Пусто</div>
+                        </div>
+                    </div>
+
+                    <div class="output-flask empty" id="output-flask">
+                        <div class="output-content" id="output-content"></div>
+                        <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 10px; font-weight: 700; z-index: 10; background: rgba(255,255,255,0.9); padding: 1px 3px; border-radius: 3px;" id="output-label">?</div>
+                    </div>
+
+                    <button class="mix-btn" id="mix-btn">СМЕШАТЬ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правая секция - навигация -->
+        <div class="right-section"></div>
+    </div>
+
+    <!-- Подключение общих скриптов -->
+    <script src="../navigation.js"></script>
+    <script src="laboratory.js"></script>
+</body>
+</html>

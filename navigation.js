@@ -5,7 +5,7 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 
 // Set values
-const recomend = ['index.html', 'ai/ai.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
+const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
 let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('');
 let lastVisited = [];
 
@@ -300,6 +300,14 @@ const pages_to_nav = {
         {"what": "ии", "tear": 100},
         {"what": "ai", "tear": 100},
         {"what": "ассистент", "tear": 100}
+    ],
+
+    // LABORATORY
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/laboratory/laboratory.html": [
+        {"what": "Химическая лаборатория", "tear": 0},
+        {"what": "лаборатори", "tear": 100},
+        {"what": "ai", "tear": 100},
+        {"what": "химич", "tear": 100}
     ]
 };
 
