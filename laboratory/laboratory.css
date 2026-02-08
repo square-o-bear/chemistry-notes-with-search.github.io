@@ -95,6 +95,14 @@ body {
 .flask.Cu .flask-liquid { background: #b87333; }
 .flask.S .flask-liquid { background: #ffff99; }
 .flask.P .flask-liquid { background: #ff9999; }
+.flask.H2O .flask-liquid { background: #a0e7ff; }
+.flask.CO2 .flask-liquid { background: #e0e0e0; }
+.flask.NH3 .flask-liquid { background: #f0f8ff; }
+.flask.CH4 .flask-liquid { background: #fff4d0; }
+.flask.O2 .flask-liquid { background: #ffe6e6; }
+.flask.HCl .flask-liquid { background: #fff9e6; }
+.flask.H2SO4 .flask-liquid { background: #fffbe6; }
+.flask.NaOH .flask-liquid { background: #f0fff0; }
 
 .alchemy-machine {
     background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
@@ -144,19 +152,6 @@ body {
     transition: height 0.5s ease;
     border-radius: 0 0 20px 20px;
 }
-
-.machine-flask.H .machine-liquid { background: #f8f9fa; }
-.machine-flask.N .machine-liquid { background: #f8f9fa; }
-.machine-flask.O .machine-liquid { background: #ffcccc; }
-.machine-flask.C .machine-liquid { background: #333333; }
-.machine-flask.Na .machine-liquid { background: #ffeb99; }
-.machine-flask.Cl .machine-liquid { background: #cce5ff; }
-.machine-flask.Fe .machine-liquid { background: #8b4513; }
-.machine-flask.Au .machine-liquid { background: #ffd700; }
-.machine-flask.Ag .machine-liquid { background: #c0c0c0; }
-.machine-flask.Cu .machine-liquid { background: #b87333; }
-.machine-flask.S .machine-liquid { background: #ffff99; }
-.machine-flask.P .machine-liquid { background: #ff9999; }
 
 .machine-flask-label {
     position: absolute;
@@ -307,6 +302,21 @@ body {
     border-left: 3px solid #007bff;
 }
 
+.reaction-info {
+    margin: 15px auto;
+    padding: 12px 16px;
+    max-width: 500px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    font-size: 14px;
+    color: #495057;
+    line-height: 1.5;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
 /* 🌙 ТЁМНАЯ ТЕМА — ЛАБОРАТОРИЯ */
 [theme="dark"] {
     /* Общий фон */
@@ -357,6 +367,14 @@ body {
 [theme="dark"] .flask.Cu .flask-liquid { background: #b87333; box-shadow: var(--liquid-glow); }
 [theme="dark"] .flask.S .flask-liquid { background: #ffff99; box-shadow: var(--liquid-glow); }
 [theme="dark"] .flask.P .flask-liquid { background: #ff9999; box-shadow: var(--liquid-glow); }
+[theme="dark"] .flask.H2O .flask-liquid { box-shadow: 0 0 15px rgba(160,231,255,0.6); }
+[theme="dark"] .flask.CO2 .flask-liquid { box-shadow: 0 0 15px rgba(224,224,224,0.4); }
+[theme="dark"] .flask.NH3 .flask-liquid { box-shadow: 0 0 15px rgba(240,248,255,0.5); }
+[theme="dark"] .flask.CH4 .flask-liquid { box-shadow: 0 0 15px rgba(255,244,208,0.4); }
+[theme="dark"] .flask.O2 .flask-liquid { box-shadow: 0 0 15px rgba(255,230,230,0.5); }
+[theme="dark"] .flask.HCl .flask-liquid { box-shadow: 0 0 15px rgba(255,249,230,0.4); }
+[theme="dark"] .flask.H2SO4 .flask-liquid { box-shadow: 0 0 15px rgba(255,251,230,0.4); }
+[theme="dark"] .flask.NaOH .flask-liquid { box-shadow: 0 0 15px rgba(240,255,240,0.5); }
 
 /* Машина — тёмный фон */
 [theme="dark"] .alchemy-machine {
@@ -435,4 +453,11 @@ body {
     background: linear-gradient(145deg, #333, #444);
     color: var(--text-primary);
     border-left-color: #4a90e2;
+}
+
+[theme="dark"] .reaction-info {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }

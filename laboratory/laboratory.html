@@ -31,65 +31,80 @@
 
             <div class="lab-container">
                 <div class="flasks-top" id="flasks-top">
-                    <div class="flask H" data-element="H" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">H</span>
-                        <span class="flask-label">Водород</span>
-                    </div>
-                    <div class="flask O" data-element="O" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">O</span>
-                        <span class="flask-label">Кислород</span>
-                    </div>
-                    <div class="flask C" data-element="C" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">C</span>
-                        <span class="flask-label">Углерод</span>
-                    </div>
-                    <div class="flask N" data-element="N" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">N</span>
-                        <span class="flask-label">Азот</span>
-                    </div>
-                    <div class="flask Na" data-element="Na" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">Na</span>
-                        <span class="flask-label">Натрий</span>
-                    </div>
-                    <div class="flask Cl" data-element="Cl" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">Cl</span>
-                        <span class="flask-label">Хлор</span>
-                    </div>
-                    <div class="flask Fe" data-element="Fe" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">Fe</span>
-                        <span class="flask-label">Железо</span>
-                    </div>
-                    <div class="flask Au" data-element="Au" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">Au</span>
-                        <span class="flask-label">Золото</span>
-                    </div>
-                    <div class="flask Ag" data-element="Ag" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">Ag</span>
-                        <span class="flask-label">Серебро</span>
-                    </div>
-                    <div class="flask Cu" data-element="Cu" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">Cu</span>
-                        <span class="flask-label">Медь</span>
-                    </div>
-                    <div class="flask S" data-element="S" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">S</span>
-                        <span class="flask-label">Сера</span>
-                    </div>
-                    <div class="flask P" data-element="P" draggable="true">
-                        <div class="flask-liquid"></div>
-                        <span class="flask-symbol">P</span>
-                        <span class="flask-label">Фосфор</span>
+                    <div class="flasks-top" id="flasks-top">
+                        <!-- Простые вещества -->
+                        <div class="flask H" data-element="H" draggable="true">
+                            <div class="flask-liquid"></div>
+                            <span class="flask-symbol">H</span>
+                            <span class="flask-label">Водород</span>
+                        </div>
+                        <div class="flask O" data-element="O" draggable="true">
+                            <div class="flask-liquid"></div>
+                            <span class="flask-symbol">O</span>
+                            <span class="flask-label">Кислород</span>
+                        </div>
+                        <div class="flask C" data-element="C" draggable="true">
+                            <div class="flask-liquid"></div>
+                            <span class="flask-symbol">C</span>
+                            <span class="flask-label">Углерод</span>
+                        </div>
+                        <div class="flask Na" data-element="Na" draggable="true">
+                            <div class="flask-liquid"></div>
+                            <span class="flask-symbol">Na</span>
+                            <span class="flask-label">Натрий</span>
+                        </div>
+                        <div class="flask Cl" data-element="Cl" draggable="true">
+                            <div class="flask-liquid"></div>
+                            <span class="flask-symbol">Cl</span>
+                            <span class="flask-label">Хлор</span>
+                        </div>
+                        <div class="flask S" data-element="S" draggable="true">
+                            <div class="flask-liquid"></div>
+                            <span class="flask-symbol">S</span>
+                            <span class="flask-label">Сера</span>
+                        </div>
+
+                        <!-- МОЛЕКУЛЫ -->
+                        <div class="flask H2O" data-element="H₂O" draggable="true">
+                            <div class="flask-liquid" style="background: #a0e7ff;"></div>
+                            <span class="flask-symbol">H₂O</span>
+                            <span class="flask-label">Вода</span>
+                        </div>
+                        <div class="flask CO2" data-element="CO₂" draggable="true">
+                            <div class="flask-liquid" style="background: #e0e0e0;"></div>
+                            <span class="flask-symbol">CO₂</span>
+                            <span class="flask-label">CO₂</span>
+                        </div>
+                        <div class="flask NH3" data-element="NH₃" draggable="true">
+                            <div class="flask-liquid" style="background: #f0f8ff;"></div>
+                            <span class="flask-symbol">NH₃</span>
+                            <span class="flask-label">Аммиак</span>
+                        </div>
+                        <div class="flask CH4" data-element="CH₄" draggable="true">
+                            <div class="flask-liquid" style="background: #fff4d0;"></div>
+                            <span class="flask-symbol">CH₄</span>
+                            <span class="flask-label">Метан</span>
+                        </div>
+                        <div class="flask O2" data-element="O₂" draggable="true">
+                            <div class="flask-liquid" style="background: #ffe6e6;"></div>
+                            <span class="flask-symbol">O₂</span>
+                            <span class="flask-label">Кислород</span>
+                        </div>
+                        <div class="flask HCl" data-element="HCl" draggable="true">
+                            <div class="flask-liquid" style="background: #fff9e6;"></div>
+                            <span class="flask-symbol">HCl</span>
+                            <span class="flask-label">Соляная к-та</span>
+                        </div>
+                        <div class="flask H2SO4" data-element="H₂SO₄" draggable="true">
+                            <div class="flask-liquid" style="background: #fffbe6;"></div>
+                            <span class="flask-symbol">H₂SO₄</span>
+                            <span class="flask-label">Серная к-та</span>
+                        </div>
+                        <div class="flask NaOH" data-element="NaOH" draggable="true">
+                            <div class="flask-liquid" style="background: #f0fff0;"></div>
+                            <span class="flask-symbol">NaOH</span>
+                            <span class="flask-label">Щёлочь</span>
+                        </div>
                     </div>
                 </div>
 
@@ -124,6 +139,10 @@
                     </div>
 
                     <button class="mix-btn" id="mix-btn">СМЕШАТЬ</button>
+                </div>
+
+                <div class="reaction-info">
+                    <p id="reaction-comment">Комментарий к веществу появится здесь...</p>
                 </div>
             </div>
         </div>
