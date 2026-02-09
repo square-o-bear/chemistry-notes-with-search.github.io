@@ -317,6 +317,20 @@ body {
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
+.clear-discovered-btn {
+    background: #c82333;
+    border: none;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+    margin-top: 20em;
+}
+
 /* 🌙 ТЁМНАЯ ТЕМА — ЛАБОРАТОРИЯ */
 [theme="dark"] {
     /* Общий фон */
@@ -460,4 +474,8 @@ body {
     border-color: #444;
     color: #e0e0e0;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+[theme="dark"] .clear-discovered-btn {
+    background: #c82333;
 }
