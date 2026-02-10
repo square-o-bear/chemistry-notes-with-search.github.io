@@ -3,7 +3,6 @@ const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 let messages = [{"role": "system", "content": "Прими на себя роль эксперта в химми"}]
 let waitResponse = false;
-const gen_api_api_key = "__GEN_API_API_KEY__";
 
 function formater(text) {
     let strongClose = false;
@@ -106,7 +105,7 @@ function sendMessage() {
     waitResponse = true;
 
     // Имитация задержки перед ответом
-    AIFeedback(message, gen_api_api_key).then(response => {
+    AIFeedback(message, window.GEN_API_API_KEY).then(response => {
         placeholder.innerHTML = formater(response);
         chatContainer.scrollTop = chatContainer.scrollHeight;
         waitResponse = false;
