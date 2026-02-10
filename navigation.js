@@ -408,10 +408,12 @@ let pageNavHTML =
     <ul class="pages-list">
  `
 
-recomend.forEach((page) => {pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav['https://square-o-bear.github.io/chemistry-notes-with-search.github.io/'+page][0].what}</a></li>`})
+recomend.forEach((page) => {pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav[`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`][0].what}</a></li>`})
 if (lastVisited.filter((page) => page !== localpage).length > 0) {
     pageNavHTML += `<br><h3>Последние</h3>`
-    lastVisited.forEach((page) => {if (page !== localpage) pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav['https://square-o-bear.github.io/chemistry-notes-with-search.github.io/'+page][0].what}</a></li>`})
+    lastVisited.forEach((page) => {
+        if (page !== localpage && pages_to_nav.keys().includes(`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`)) pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav[`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`][0].what}</a></li>`
+    })
 }
 pageNavHTML += `</ul></div>`
 // theme changer / Рекоминдации / Последние просмотренные
