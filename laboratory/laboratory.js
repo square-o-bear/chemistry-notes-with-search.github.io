@@ -163,7 +163,7 @@ function getFallbackReaction(el1, el2) {
 
 // Функция для общения с ИИ
 async function AIFeedback(message) {
-    const token = 'sk-1f2fKezCzkIq4VapM5d6vAXJmKwRuQnNdvvQbMw7dNdJjq5Wj0gNh8nazPZe';
+    const token = '__GEN_API_API_KEY__';
     const headers = {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',

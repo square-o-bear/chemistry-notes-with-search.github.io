@@ -3,6 +3,7 @@ const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 let messages = [{"role": "system", "content": "Прими на себя роль эксперта в химми"}]
 let waitResponse = false;
+const gen_api_api_key = "__GEN_API_API_KEY__";
 
 function formater(text) {
     let strongClose = false;
@@ -28,7 +29,7 @@ function formater(text) {
  * @param {string} modelId - ID модели (по умолчанию gpt-4.1)
  * @returns {Promise<string>} - Ответ нейросети
  */
-async function AIFeedback(message, token='sk-1f2fKezCzkIq4VapM5d6vAXJmKwRuQnNdvvQbMw7dNdJjq5Wj0gNh8nazPZe', modelId = 'gemini-2-5-flash-lite') {
+async function AIFeedback(message, token, modelId = 'gemini-2-5-flash-lite') {
     const headers = {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -83,9 +84,6 @@ async function AIFeedback(message, token='sk-1f2fKezCzkIq4VapM5d6vAXJmKwRuQnNdvv
     }
 }
 
-// Не смотри слева токен :(
-const MY_TOKEN =                                                                                                'sk-1f2fKezCzkIq4VapM5d6vAXJmKwRuQnNdvvQbMw7dNdJjq5Wj0gNh8nazPZe';
-
 function addMessage(text, isUser) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
@@ -108,7 +106,7 @@ function sendMessage() {
     waitResponse = true;
 
     // Имитация задержки перед ответом
-    AIFeedback(message).then(response => {
+    AIFeedback(message, gen_api_api_key).then(response => {
         placeholder.innerHTML = formater(response);
         chatContainer.scrollTop = chatContainer.scrollHeight;
         waitResponse = false;

@@ -1,0 +1,21 @@
+name: Build and Deploy with Secrets
+
+on:
+  push:
+    branches: [ main ] # или другая ветка, по которой запускается сборка
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: secret "GEN_API_API_KEY" to ./ai/aiChat.js
+        run: |
+          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./ai/aiChat.js
+
+      - name: secret "GEN_API_API_KEY" to ./laboratory/laboratory.js
+        run: |
+          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
