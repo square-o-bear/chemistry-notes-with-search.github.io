@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: secret "GEN_API_API_KEY" to ./ai/aiChat.js and ./laboratory/laboratory.js
         run: |
-          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
           sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./ai/aiChat.js
+          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
