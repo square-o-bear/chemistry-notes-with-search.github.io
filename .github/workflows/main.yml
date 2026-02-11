@@ -5,7 +5,7 @@ on:
     branches: [ main ] # или другая ветка, по которой запускается сборка
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     environment: github-pages;
     
@@ -20,3 +20,5 @@ jobs:
           echo "window.GEN_API_API_KEY = '${{ secrets.GEN_API_API_KEY }}';" > ./config.js
 #          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./ai/aiChat.js
 #          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
+        env:
+          GEN_API_API_KEY: ${{ secrets.GEN_API_API_KEY }}
