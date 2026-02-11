@@ -2,18 +2,50 @@ name: add Build and Deploy
 
 on:
   push:
-    branches: [ main ] # или другая ветка, по которой запускается сборка
+    branches: [ main ]
+
+# Разрешения, необходимые для деплоя на GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
+  # 1. Ваша задача сборки
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: create config with secrets and var
+      # Вставляем секреты (Ваш код с sed)
+      - name: Inject Secrets in config
         run: |
           echo "window.GEN_API_API_KEY = '${{ secrets.GEN_API_API_KEY }}';" > ./config.js
 #          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./ai/aiChat.js
 #          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
+
+      # Здесь можно добавить установку зависимостей и сборку (npm install && npm run build)
+      # Если у вас просто статические файлы без сборки, этот шаг можно пропустить.
+
+      # ЗАГРУЖАЕМ РЕЗУЛЬТАТ (Артефакт)
+      # Это "мостик" между задачами. Мы сохраняем файлы, чтобы вторая задача их подхватила.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Укажите папку с готовым сайтом (например, './dist', если есть сборка)
+
+  # 2. Задача деплоя
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    
+    # ВОТ ЗДЕСЬ МАГИЯ: эта задача не начнется, пока 'build' не завершится успешно
+    needs: build 
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
