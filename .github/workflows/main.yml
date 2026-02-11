@@ -5,11 +5,12 @@ on:
     branches: [ main ] # или другая ветка, по которой запускается сборка
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment: github-pages;
     
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
