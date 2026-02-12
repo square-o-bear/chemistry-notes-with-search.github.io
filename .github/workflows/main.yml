@@ -16,8 +16,7 @@ jobs:
 
       - name: create config with secrets and var
         run: |
-          echo "GEN_API_API_KEY=${{ secrets.GEN_API_API_KEY }}" >> .env
-          echo "window.GEN_API_API_KEY = '${{ secrets.GEN_API_API_KEY }}';" > ./config.js
+          echo "window.GEN_API_API_KEY = '${{ secrets.GEN_API_API_KEY }}';" > dist/config.js
 #          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./ai/aiChat.js
 #          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
         env:
