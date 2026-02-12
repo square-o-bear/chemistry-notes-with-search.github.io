@@ -1,24 +1,27 @@
-name: add Build and Deploy
+name: Build and Deploy
 
 on:
   push:
-    branches: [ main ] # или другая ветка, по которой запускается сборка
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: github-pages;
+    environment: github-pages
     
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: create config with secrets and var
+      - name: Create config.js with secrets
         run: |
-          mkdir -p docs
-          echo "window.GEN_API_API_KEY = '${{ secrets.GEN_API_API_KEY }}';" > docs/config.js
-#          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./ai/aiChat.js
-#          sed -i 's|__GEN_API_API_KEY__|${{ secrets.GEN_API_API_KEY }}|g' ./laboratory/laboratory.js
-        env:
-          GEN_API_API_KEY: ${{ secrets.GEN_API_API_KEY }}
+          echo "window.GEN_API_API_KEY = '${{ secrets.GEN_API_API_KEY }}';" > ./config.js
+          echo "✓ config.js created"
+          cat ./config.js
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./          # Деплоим корень
+          keep_files: false
