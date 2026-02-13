@@ -9,7 +9,6 @@ function formater(text) {
     for (let i = 0; i < text.length-1; ++i) {
         if (text[i] == '*') {
             if (text[i+1] == '*') {
-                // <strong></strong>
                 text = text.slice(0, i) + (!strongClose ? "<strong>" : '</strong>') + text.slice(i + 2);
                 strongClose = !strongClose;
             }
@@ -35,7 +34,6 @@ async function AIFeedback(message, token, modelId = 'gemini-2-5-flash-lite') {
     };
 
     try {
-        // 1. Создаем запрос на генерацию
         messages.push({"role": "user", "content": message})
         const createRes = await fetch(`https://api.gen-api.ru/api/v1/networks/${modelId}`, {
             method: 'POST',
@@ -52,9 +50,7 @@ async function AIFeedback(message, token, modelId = 'gemini-2-5-flash-lite') {
         }
 
         const requestId = createData.request_id;
-        //console.log(`Задача создана, ID: ${requestId}. Ждем ответа...`);
 
-        // 2. Опрос статуса (Polling)
         while (true) {
             const statusRes = await fetch(`https://api.gen-api.ru/api/v1/request/get/${requestId}`, {
                 method: 'GET',
@@ -64,7 +60,6 @@ async function AIFeedback(message, token, modelId = 'gemini-2-5-flash-lite') {
             const statusData = await statusRes.json();
 
             if (statusData.status === 'success') {
-                // Возвращаем финальный текстовый результат
                 messages.push({"role": "assistant", "content": statusData.full_response[0].message.content})
                 return statusData.full_response[0].message.content; 
             } 
@@ -73,7 +68,6 @@ async function AIFeedback(message, token, modelId = 'gemini-2-5-flash-lite') {
                 throw new Error(`Нейросеть вернула ошибку: ${JSON.stringify(statusData.result || 'Unknown error')}`);
             }
 
-            // Если еще в процессе (processing/starting), ждем 2 секунды перед следующей проверкой
             await new Promise(resolve => setTimeout(resolve, 2000));
         }
 
@@ -96,15 +90,12 @@ function sendMessage() {
     const message = userInput.value.trim();
     if (message === '' || waitResponse) return;
 
-    // Добавляем сообщение пользователя
     addMessage(message, true);
     userInput.value = '';
 
-    // Показываем "..." от ИИ
     const placeholder = addMessage('...', false);
     waitResponse = true;
 
-    // Имитация задержки перед ответом
     AIFeedback(message, window.GEN_API_API_KEY).then(response => {
         placeholder.innerHTML = formater(response);
         chatContainer.scrollTop = chatContainer.scrollHeight;

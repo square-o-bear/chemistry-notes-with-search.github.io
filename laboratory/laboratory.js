@@ -16,8 +16,8 @@ const flowLeft = document.getElementById('flow-left');
 const flowRight = document.getElementById('flow-right');
 const flowCenter = document.getElementById('flow-center');
 const clearBtn = document.querySelector('.clear-discovered-btn');
+const reactionComment = document.getElementById('reaction-comment');
 
-// Цвета веществ
 const elementColors = {'H': '#f8f9fa', 'O': '#ffcccc', 'C': '#333333', 'Na': '#ffeb99', 'Cl': '#cce5ff', 'S': '#ffff99', 'Fe': '#8b4513', 'Au': '#ffd700', 'Ag': '#c0c0c0', 'Cu': '#b87333', 'P': '#ff9999', 'H₂O': '#a0e7ff', 'CO₂': '#e0e0e0', 'NH₃': '#f0f8ff', 'CH₄': '#fff4d0', 'O₂': '#ffe6e6', 'HCl': '#fff9e6', 'H₂SO₄': '#fffbe6', 'NaOH': '#f0fff0'};
 
 // КНОПКА ОЧИСТКИ ИЗУЧЕННЫХ ВЕЩЕСТВ
@@ -107,7 +107,8 @@ mixBtn.addEventListener('click', () => {
             let answer = response.trim().split('\n');
             let formula = answer[0].replace(/Формула:\s*/, '').trim();
             let color = answer[1].replace(/Цвет:\s*/, '').trim();
-            let comment = answer.length > 2 ? answer.slice(2).join(' ') : 'Нет информации о веществе.';
+            let comment = answer[2].join(' ');
+            //console.log(answer);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment);
         }).catch(() => {
             const result = getFallbackReaction(eto_to_chto_nado_neyronke[0], eto_to_chto_nado_neyronke[1]);
@@ -243,12 +244,13 @@ function addFlaskToTop(formula, color) {
     }
 }
 
-function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula) {
+function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment) {
     const cleanFormula = formula.trim().replace(/[↑↓]/g, '').split(' ')[0]; // убираем газ/осадок
     if (!cleanFormula || cleanFormula === '?' || cleanFormula.length > 10) return;
 
     addFlaskToTop(cleanFormula, color);
 
     na_eto_zabey_ono_dolzhno_rabotat[0] = { color, formula: cleanFormula };
+    reactionComment.textContent = comment;
     updateOutputDisplay();
 }
