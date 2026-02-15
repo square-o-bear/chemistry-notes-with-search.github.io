@@ -1,0 +1,134 @@
+.test-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.test-title {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.task {
+    margin-bottom: 30px;
+}
+
+.task h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.task ol {
+    padding-left: 20px;
+}
+
+.task li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task input {
+    width: 300px;
+    padding: 8px 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.task input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.correct {
+    border-color: #28a745 !important;
+    background-color: #f8fff9;
+}
+
+.incorrect {
+    border-color: #d9534f !important;
+    background-color: #fff9f9;
+}
+
+.check-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background: linear-gradient(145deg, #4a90e2, #3a7bc8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    transition: all 0.3s;
+}
+
+.check-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
+.result-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.result-correct {
+    color: #28a745;
+}
+
+.result-incorrect {
+    color: #d9534f;
+}
+
+/* 🌙 Тёмная тема */
+[theme="dark"] .test-container {
+    background-color: #2d2d2d;
+    border-color: #444;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[theme="dark"] .test-title,
+[theme="dark"] .task h3,
+[theme="dark"] .task p {
+    color: #e0e0e0;
+}
+
+[theme="dark"] .task input {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+[theme="dark"] .task input:focus {
+    border-color: #4a90e2;
+}
+
+[theme="dark"] .correct {
+    background-color: #253a2c;
+    border-color: #28a745;
+}
+
+[theme="dark"] .incorrect {
+    background-color: #3a2b2b;
+    border-color: #d9534f;
+}
+
+[theme="dark"] .result-message {
+    color: #e0e0e0;
+}
