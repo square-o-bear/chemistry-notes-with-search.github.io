@@ -16,8 +16,8 @@ const flowLeft = document.getElementById('flow-left');
 const flowRight = document.getElementById('flow-right');
 const flowCenter = document.getElementById('flow-center');
 const clearBtn = document.querySelector('.clear-discovered-btn');
+const reactionComment = document.getElementById('reaction-comment');
 
-// Цвета веществ
 const elementColors = {'H': '#f8f9fa', 'O': '#ffcccc', 'C': '#333333', 'Na': '#ffeb99', 'Cl': '#cce5ff', 'S': '#ffff99', 'Fe': '#8b4513', 'Au': '#ffd700', 'Ag': '#c0c0c0', 'Cu': '#b87333', 'P': '#ff9999', 'H₂O': '#a0e7ff', 'CO₂': '#e0e0e0', 'NH₃': '#f0f8ff', 'CH₄': '#fff4d0', 'O₂': '#ffe6e6', 'HCl': '#fff9e6', 'H₂SO₄': '#fffbe6', 'NaOH': '#f0fff0'};
 
 // КНОПКА ОЧИСТКИ ИЗУЧЕННЫХ ВЕЩЕСТВ
@@ -25,16 +25,13 @@ clearBtn.addEventListener('click', () => {
     const confirmed = confirm('Вы уверены, что хотите удалить все открытые вещества?');
     if (!confirmed) return;
 
-    // Удаляем из localStorage
     localStorage.removeItem('discoveredElements');
     window.location.reload();
 
-    // Удаляем колбы из DOM
     const flasksTop = document.getElementById('flasks-top');
-    const initialFlasksCount = 18; // Количество начальных колб (H, O, C, Na, Cl, S, H₂O, CO₂, NH₃, CH₄, O₂, HCl, H₂SO₄, NaOH + простые)
+    const initialFlasksCount = 18;
     const currentFlasks = flasksTop.querySelectorAll('.flask');
 
-    // Удаляем только те, что были добавлены (после первых 18)
     if (currentFlasks.length > initialFlasksCount) {
         Array.from(currentFlasks)
             .slice(initialFlasksCount)
@@ -106,19 +103,18 @@ mixBtn.addEventListener('click', () => {
     if (eto_to_chto_nado_neyronke[0] && eto_to_chto_nado_neyronke[1]) {
         mixBtn.disabled = true;
 
-        // Отправляем запрос нейросети
         AIFeedback(`${eto_to_chto_nado_neyronke[0]} + ${eto_to_chto_nado_neyronke[1]}`).then(response => {
             let answer = response.trim().split('\n');
             let formula = answer[0].replace(/Формула:\s*/, '').trim();
             let color = answer[1].replace(/Цвет:\s*/, '').trim();
-            let comment = answer.length > 2 ? answer.slice(2).join(' ') : 'Нет информации о веществе.';
+            let comment = answer[2].join(' ');
+            //console.log(answer);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment);
         }).catch(() => {
             const result = getFallbackReaction(eto_to_chto_nado_neyronke[0], eto_to_chto_nado_neyronke[1]);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(result.color, result.formula, 'Информация недоступна.');
         });
 
-        // Анимация
         flowLeft.style.opacity = '1'; flowLeft.style.width = '100%';
         flowRight.style.opacity = '1'; flowRight.style.width = '100%';
 
@@ -134,7 +130,6 @@ mixBtn.addEventListener('click', () => {
     }
 });
 
-// Запасной вариант, если ИИ не ответил
 function getFallbackReaction(el1, el2) {
     const reactions = {
         'H+O': { formula: 'H₂O', color: '#a0e7ff' },
@@ -149,7 +144,6 @@ function getFallbackReaction(el1, el2) {
     return reactions[`${el1}+${el2}`] || reactions[`${el2}+${el1}`] || { formula: '?', color: 'transparent' };
 }
 
-// Очистка двойным кликом
 [flaskLeft, flaskRight].forEach((flask, index) => {
     flask.addEventListener('dblclick', () => {
         const liquid = index === 0 ? liquidLeft : liquidRight;
@@ -161,7 +155,6 @@ function getFallbackReaction(el1, el2) {
     });
 });
 
-// Функция для общения с ИИ
 async function AIFeedback(message) {
     const token = window.GEN_API_API_KEY;
     const headers = {
@@ -204,7 +197,6 @@ async function AIFeedback(message) {
     }
 }
 
-// Добавление новой колбы в верхний ряд
 // Добавление новой колбы в верхний ряд + сохранение
 function addFlaskToTop(formula, color) {
     const container = document.getElementById('flasks-top');
@@ -214,31 +206,26 @@ function addFlaskToTop(formula, color) {
         return; // не дублируем
     }
 
-    // Создаём новую колбу
     const flask = document.createElement('div');
     flask.className = `flask ${formula.replace(/[^a-zA-Z0-9]/g, '')}`;
     flask.setAttribute('data-element', formula);
     flask.draggable = true;
 
-    // Жидкость
     const liquid = document.createElement('div');
     liquid.className = 'flask-liquid';
     liquid.style.background = color;
     flask.appendChild(liquid);
 
-    // Символ
     const symbol = document.createElement('span');
     symbol.className = 'flask-symbol';
     symbol.textContent = formula;
     flask.appendChild(symbol);
 
-    // Подпись
     const label = document.createElement('span');
     label.className = 'flask-label';
     label.textContent = formula;
     flask.appendChild(label);
 
-    // Перетаскивание
     flask.addEventListener('dragstart', (e) => {
         e.dataTransfer.setData('text/plain', formula);
         flask.style.opacity = '0.7';
@@ -248,10 +235,8 @@ function addFlaskToTop(formula, color) {
         flask.style.opacity = '1';
     });
 
-    // Добавляем в DOM
     container.appendChild(flask);
 
-    // === Сохраняем в localStorage ===
     let discoveredElements = JSON.parse(localStorage.getItem('discoveredElements') || '[]');
     if (!discoveredElements.some(([el]) => el === formula)) {
         discoveredElements.push([formula, color]);
@@ -259,16 +244,13 @@ function addFlaskToTop(formula, color) {
     }
 }
 
-// Установка результата
-function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula) {
-    // Парсим формулу
+function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment) {
     const cleanFormula = formula.trim().replace(/[↑↓]/g, '').split(' ')[0]; // убираем газ/осадок
     if (!cleanFormula || cleanFormula === '?' || cleanFormula.length > 10) return;
 
-    // Добавляем новое вещество в панель
     addFlaskToTop(cleanFormula, color);
 
-    // Обновляем выход
     na_eto_zabey_ono_dolzhno_rabotat[0] = { color, formula: cleanFormula };
+    reactionComment.textContent = comment;
     updateOutputDisplay();
 }
