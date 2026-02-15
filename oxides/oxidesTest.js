@@ -123,12 +123,12 @@ function checkAnswers() {
 
     if (correctCount >= 13) {
         resultMessage.className = "result-message result-correct";
-        resultMessage.textContent += " — Отлично!";
+        resultMessage.textContent += " - Отлично!";
     } else if (correctCount >= 9) {
         resultMessage.className = "result-message result-correct";
-        resultMessage.textContent += " — Хорошо!";
+        resultMessage.textContent += " - Хорошо!";
     } else {
         resultMessage.className = "result-message result-incorrect";
-        resultMessage.textContent += " — Повтори тему и попробуй снова!";
+        resultMessage.textContent += " - Повтори тему и попробуй снова!";
     }
 }
