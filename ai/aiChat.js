@@ -21,56 +21,45 @@ function formater(text) {
 }
 
 /**
- * Функция для общения с GenAPI
+ * Функция для общения с GenAPI через Cloudflare Worker
  * @param {string} message - Ваше сообщение для нейросети
- * @param {string} token - Ваш API токен
- * @param {string} modelId - ID модели (по умолчанию gpt-4.1)
+ * @param {string} modelId - ID модели (по умолчанию gemini-2-5-flash-lite)
  * @returns {Promise<string>} - Ответ нейросети
  */
-async function AIFeedback(message, token, modelId = 'gemini-2-5-flash-lite') {
-    const headers = {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-    };
-
+async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
     try {
-        messages.push({"role": "user", "content": message})
-        const createRes = await fetch(`https://api.gen-api.ru/api/v1/networks/${modelId}`, {
+        // Добавляем сообщение пользователя в историю
+        messages.push({ "role": "user", "content": message });
+        
+        // URL вашего Cloudflare Worker
+        const WORKER_URL = 'https://chemistry-notes-with-search.mika-ushakov.workers.dev/';
+        
+        // Отправляем запрос к прокси
+        const response = await fetch(WORKER_URL, {
             method: 'POST',
-            headers: headers,
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
-                'messages': messages
+                modelId: modelId,
+                messages: messages
             })
         });
 
-        const createData = await createRes.json();
-
-        if (!createRes.ok) {
-            throw new Error(`Ошибка создания запроса: ${createData.message || createRes.statusText}`);
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error?.message || `HTTP ${response.status}`);
         }
 
-        const requestId = createData.request_id;
-
-        while (true) {
-            const statusRes = await fetch(`https://api.gen-api.ru/api/v1/request/get/${requestId}`, {
-                method: 'GET',
-                headers: headers
-            });
-
-            const statusData = await statusRes.json();
-
-            if (statusData.status === 'success') {
-                messages.push({"role": "assistant", "content": statusData.full_response[0].message.content})
-                return statusData.full_response[0].message.content; 
-            } 
-            
-            if (statusData.status === 'failed' || statusData.status === 'error') {
-                throw new Error(`Нейросеть вернула ошибку: ${JSON.stringify(statusData.result || 'Unknown error')}`);
-            }
-
-            await new Promise(resolve => setTimeout(resolve, 2000));
+        const data = await response.json();
+        
+        // Добавляем ответ в историю
+        if (data.response) {
+            messages.push({ "role": "assistant", "content": data.response });
         }
-
+        
+        return data.response;
+        
     } catch (error) {
         console.error('Ошибка при работе с GenAPI:', error.message);
         throw error;
