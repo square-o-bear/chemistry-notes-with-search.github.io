@@ -7,7 +7,13 @@ let waitResponse = false;
 function formater(text) {
     let strongClose = false;
     for (let i = 0; i < text.length-1; ++i) {
-        if (text[i] == '*') {
+        if (text[i] == '<') {
+            text = text.slice(0, i) + '&lt' + text.slice(i + 1);
+        }
+        else if (text[i] == '>') {
+            text = text.slice(0, i) + '&gt' + text.slice(i + 1);
+        }
+        else if (text[i] == '*') {
             if (text[i+1] == '*') {
                 text = text.slice(0, i) + (!strongClose ? "<strong>" : '</strong>') + text.slice(i + 2);
                 strongClose = !strongClose;
@@ -32,7 +38,7 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
         messages.push({ "role": "user", "content": message });
         
         // URL вашего Cloudflare Worker
-        const WORKER_URL = 'https://chemistry-notes-with-search.mika-ushakov.workers.dev/';
+        const WORKER_URL = 'https://chemistry-notes-with-search.mika-ushakov.workers.dev/api/genapi';
         
         // Отправляем запрос к прокси
         const response = await fetch(WORKER_URL, {
