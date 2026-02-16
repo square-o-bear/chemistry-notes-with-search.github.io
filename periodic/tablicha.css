@@ -8,9 +8,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
   color: #2d3748;
-  padding: 16px;
   line-height: 1.5;
-  min-height: 100vh;
 }
 
 h1 {
