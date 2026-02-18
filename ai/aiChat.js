@@ -70,7 +70,7 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
         return data.response;
         
     } catch (error) {
-        console.error('Ошибка при создания ответа:', error.message);
+        console.error('Ошибка при создания ответа от ИИ:', error.message);
         //throw error;
     }
 }

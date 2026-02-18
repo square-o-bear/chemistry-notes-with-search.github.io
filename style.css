@@ -273,75 +273,6 @@ a:hover {
     vertical-align: middle;
 }
 
-
-/* Адаптивность для очень маленьких экранов */
-@media screen and (orientation: portrait) {
-    .container {
-        grid-template-columns: 1fr; /* Все элементы в один столбец */
-        padding: 10px;
-    }
-
-    .left-section, .right-section {
-        grid-column: 1; /* Размещаем все в первом столбце */
-        margin-bottom: 20px;
-    }
-
-    .search-container {
-        flex-direction: column;
-        width: 100%;
-        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 25px;
-        overflow: hidden;
-        background-color: #f8f9fa;
-        border: 1px solid #e1e8ed;
-        margin-bottom: 30px; /* Увеличен отступ */
-    }
-
-    #search-input {
-        width: 100%;
-        padding: 20px 25px; /* Увеличен padding */
-        font-size: 18px; /* Увеличен шрифт */
-        border-bottom: 1px solid #ddd;
-    }
-
-    #search-button {
-        width: 100%;
-        padding: 20px 25px; /* Увеличен padding */
-        font-size: 20px; /* Увеличен шрифт */
-        margin-top: 0;
-        border-top: 1px solid #ddd;
-    }
-
-    .pages-list a {
-        font-size: 16px; /* Увеличен шрифт */
-        padding: 15px 20px; /* Увеличен padding */
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .pages-list a:hover {
-        transform: translateY(-3px); /* Подъём при наведении */
-        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25); /* Тень */
-    }
-
-    .center-section {
-        min-height: 200vh;
-        padding: 25px;
-    }
-
-    h1, h2, h3 {
-        font-size: 1.4em;
-    }
-
-    ul, ol {
-        padding-left: 18px;
-    }
-
-    code {
-        font-size: 15px;
-    }
-}
-
 /* СТИЛИ ДЛЯ ТАБЛИЦ */
 table {
     width: 100%;
@@ -454,10 +385,6 @@ button {
         color: #e0e0e0;
     }
 
-    .container {
-        grid-template-columns: 350px 1fr 200px;
-    }
-
     .left-section,
     .center-section,
     .right-section {
@@ -466,7 +393,7 @@ button {
     }
 
     .left-section {
-        box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+        box-shadow: rgba(255, 255, 255, 0.1);
     }
 
     .center-section {
@@ -474,7 +401,7 @@ button {
     }
 
     .right-section {
-        box-shadow: -2px 0 5px rgba(255, 255, 255, 0.1);
+        box-shadow: rgba(255, 255, 255, 0.1);
     }
 
     .search-container {
@@ -508,7 +435,7 @@ button {
 
     .search-suggestion {
         background-color: #333;
-        border-left: 4px solid #4a90e2;
+        border-left-color: #4a90e2;
     }
 
     .search-suggestion:hover {
@@ -521,7 +448,7 @@ button {
 
     h2 {
         background-color: rgba(74, 144, 226, 0.2);
-        border-left: 4px solid #4a90e2;
+        border-left-color:#4a90e2;
     }
 
     p, ul, li {
@@ -532,7 +459,7 @@ button {
         color: #4a90e2;
         background-color: #333;
         border-color: #444;
-        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        box-shadow: rgba(74, 144, 226, 0.3);
     }
 
     a:hover {
@@ -556,7 +483,7 @@ button {
         background-color: #333;
         border-color: #ffcccc;
         color: #d9534f;
-        box-shadow: 0 4px 12px rgba(217, 83, 79, 0.5);
+        box-shadow: rgba(217, 83, 79, 0.5);
     }
 
     .no-find-results::before {
@@ -571,7 +498,7 @@ button {
 
     select:focus {
         border-color: #4a90e2;
-        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        box-shadow: rgba(74, 144, 226, 0.2);
         background-color: #444;
     }
 
@@ -584,18 +511,18 @@ button {
     table {
         background-color: #2d2d2d;
         border-color: #444;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: rgba(0, 0, 0, 0.3);
     }
 
     th {
         background-color: #3a7bc8;
         color: white;
-        border-bottom: 1px solid #555;
+        border-bottom-color: #555;
     }
 
     td {
         color: #e0e0e0;
-        border-bottom: 1px solid #444;
+        border-bottom-color: #444;
     }
 
     tr:nth-child(even) {
@@ -604,10 +531,77 @@ button {
 
     tr:hover {
         background-color: #333;
-        transform: scale(1.005);
     }
 
     #themeChange:hover {
-        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        box-shadow: rgba(74, 144, 226, 0.3);
+    }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media screen and (orientation: portrait) {
+    .container {
+        grid-template-columns: 1fr; /* Все элементы в один столбец */
+        padding: 10px;
+    }
+
+    .left-section, .right-section {
+        grid-column: 1; /* Размещаем все в первом столбце */
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        width: 100%;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 25px;
+        overflow: hidden;
+        background-color: #f8f9fa;
+        border: 1px solid #e1e8ed;
+        margin-bottom: 30px; /* Увеличен отступ */
+    }
+
+    #search-input {
+        width: 100%;
+        padding: 20px 25px; /* Увеличен padding */
+        font-size: 18px; /* Увеличен шрифт */
+        border-bottom: 1px solid #ddd;
+    }
+
+    #search-button {
+        width: 100%;
+        padding: 20px 25px; /* Увеличен padding */
+        font-size: 20px; /* Увеличен шрифт */
+        margin-top: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .pages-list a {
+        font-size: 16px; /* Увеличен шрифт */
+        padding: 15px 20px; /* Увеличен padding */
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .pages-list a:hover {
+        transform: translateY(-3px); /* Подъём при наведении */
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25); /* Тень */
+    }
+
+    .center-section {
+        min-height: 200vh;
+        padding: 25px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.4em;
+    }
+
+    ul, ol {
+        padding-left: 18px;
+    }
+
+    code {
+        font-size: 15px;
     }
 }

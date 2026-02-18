@@ -156,41 +156,42 @@ function getFallbackReaction(el1, el2) {
 });
 
 async function AIFeedback(message) {
-    const token = window.GEN_API_API_KEY;
-    const headers = {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-    };
-
     try {
-        const res = await fetch(`https://api.gen-api.ru/api/v1/networks/gemini-2-5-flash-lite`, {
+        const WORKER_URL = 'https://chemistry-notes-with-search.mika-ushakov.workers.dev/api/genapi';
+        
+        // Отправляем запрос к прокси
+        const response = await fetch(WORKER_URL, {
             method: 'POST',
-            headers: headers,
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
+                modelId: 'gemini-2-5-flash-lite',
+                messages: JSON.stringify({
                 'messages': [
-                    {"role": "system", "content": "Ты — химический ИИ. Выведи результат реакции двух веществ. Формат: первая строка — формула продукта, вторая — цвет в hex, третья строка - инвформация о веществе"},
+                    {"role": "system", 
+"content": "Ты — химический ИИ. Выведи результат реакции двух веществ. Формат: первая строка — формула продукта, вторая — цвет в hex, третья строка - инвформация о получившемся веществе"},
                     {"role": "user", "content": message}
                 ]
             })
+            })
         });
 
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.message);
-
-        const requestId = data.request_id;
-        while (true) {
-            const statusRes = await fetch(`https://api.gen-api.ru/api/v1/request/get/${requestId}`, {
-                method: 'GET', headers
-            });
-            const statusData = await statusRes.json();
-
-            if (statusData.status === 'success') {
-                return statusData.full_response[0].message.content;
-            }
-            if (statusData.status === 'failed') throw new Error(statusData.result);
-
-            await new Promise(resolve => setTimeout(resolve, 2000));
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error?.message || `HTTP ${response.status}`);
         }
+
+        const data = await response.json();
+        
+        // Добавляем ответ в историю
+        if (data.response) {
+            messages.push({ "role": "assistant", "content": data.response });
+            localStorage.setItem('aiHistory', JSON.stringify(messages));
+        }
+        
+        return data.response;
+        
     } catch (error) {
         console.error('Ошибка ИИ:', error);
         return "?\n#888888";

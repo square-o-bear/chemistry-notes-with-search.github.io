@@ -83,7 +83,7 @@
 }
 
 #clear-button {
-    padding: 12px 14px;
+    padding: 12px 5px;
     background-color: #c82333;
     color: white;
     border: none;
@@ -150,5 +150,13 @@
 
     #clear-button:hover {
         background-color: #c9302c;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .center-section {
+        max-height: 100vw;
+        min-height: 100vw;
+        height: 100vw;
     }
 }
