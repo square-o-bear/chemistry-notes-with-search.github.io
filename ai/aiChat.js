@@ -67,8 +67,8 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
         return data.response;
         
     } catch (error) {
-        console.error('Ошибка при работе с GenAPI:', error.message);
-        throw error;
+        console.error('Ошибка при создания ответа:', error.message);
+        //throw error;
     }
 }
 
@@ -91,7 +91,7 @@ function sendMessage() {
     const placeholder = addMessage('...', false);
     waitResponse = true;
 
-    AIFeedback(message, window.GEN_API_API_KEY).then(response => {
+    AIFeedback(message).then(response => {
         placeholder.innerHTML = formater(response);
         chatContainer.scrollTop = chatContainer.scrollHeight;
         waitResponse = false;

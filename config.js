@@ -1,2 +1,0 @@
-
-window.GEN_API_API_KEY = 'sk-PmSzmlmpuhihGNfWloURvDrXDFDdmkD5X8hpLXeCArrDX21foaopEdR52plD'

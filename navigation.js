@@ -32,6 +32,11 @@ const pages_to_nav = {
         {"what": "главн", "tear": 100},
         {"what": "хими", "tear": 100}
     ],
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/": [
+        {"what": "Главное", "tear": 0},
+        {"what": "главн", "tear": 100},
+        {"what": "хими", "tear": 100}
+    ],
 
     // ATOM
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/atom.html": [
@@ -302,7 +307,7 @@ const pages_to_nav = {
         {"what": "OH", "tear": 10}
     ],
 
-    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxidesTest.html": [
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/hydroxides/hydroxidesTest.html": [
         { "what": "Тест по гидроксидам", "tear": 0},
         { "what": "гидроксид", "tear": 100},
         { "what": "тест", "tear": 90},
@@ -425,10 +430,12 @@ let pageNavHTML =
  `
 
 recomend.forEach((page) => {pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav[`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`][0].what}</a></li>`})
-if (lastVisited.filter((page) => page !== localpage).length > 0) {
+
+// Последние
+if (lastVisited.filter((page) => (page !== localpage && page != "")).length > 0) {
     pageNavHTML += `<br><h3>Последние</h3>`
     lastVisited.forEach((page) => {
-        if (page !== localpage && Object.keys(pages_to_nav).includes(`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`)) pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav[`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`][0].what}</a></li>`
+        if (page !== localpage && page != "" && Object.keys(pages_to_nav).includes(`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`)) pageNavHTML += `<li><a href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}">${pages_to_nav[`https://square-o-bear.github.io/chemistry-notes-with-search.github.io/${page}`][0].what}</a></li>`
     })
 }
 pageNavHTML += `</ul></div>`
