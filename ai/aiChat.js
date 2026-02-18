@@ -6,19 +6,32 @@ const clearButton = document.getElementById('clear-button');
 const messages = JSON.parse(localStorage.getItem('aiHistory') || '[{"role": "system", "content": "Прими на себя роль эксперта в химми"}]');
 let waitResponse = false;
 
+for (let i = 1; i < messages.length; ++i) {
+    addMessage(formater(messages[i].content), messages[i].role == 'user');
+    console.log(messages[i])
+}
+
 function formater(text) {
     let strongClose = false;
+    let ignoreLTGT = false;
     for (let i = 0; i < text.length-1; ++i) {
         if (text[i] == '<') {
-            text = text.slice(0, i) + '&lt' + text.slice(i + 1);
+            if (!ignoreLTGT)
+                text = text.slice(0, i) + '&lt' + text.slice(i + 1);
+            else
+                ignoreLTGT = false;
         }
         else if (text[i] == '>') {
-            text = text.slice(0, i) + '&gt' + text.slice(i + 1);
+            if (!ignoreLTGT)
+                text = text.slice(0, i) + '&gt' + text.slice(i + 1);
+            else
+                ignoreLTGT = false;
         }
         else if (text[i] == '*') {
             if (text[i+1] == '*') {
                 text = text.slice(0, i) + (!strongClose ? "<strong>" : '</strong>') + text.slice(i + 2);
                 strongClose = !strongClose;
+                ignoreLTGT = true;
             }
             else
                 text = text.slice(0, i) + '•' + text.slice(i + 1);

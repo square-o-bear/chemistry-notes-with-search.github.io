@@ -167,13 +167,9 @@ async function AIFeedback(message) {
             },
             body: JSON.stringify({
                 modelId: 'gemini-2-5-flash-lite',
-                messages: JSON.stringify({
-                'messages': [
-                    {"role": "system", 
+                messages: [{"role": "system", 
 "content": "Ты — химический ИИ. Выведи результат реакции двух веществ. Формат: первая строка — формула продукта, вторая — цвет в hex, третья строка - инвформация о получившемся веществе"},
-                    {"role": "user", "content": message}
-                ]
-            })
+                    {"role": "user", "content": message}]
             })
         });
 
