@@ -144,16 +144,14 @@ function getFallbackReaction(el1, el2) {
     return reactions[`${el1}+${el2}`] || reactions[`${el2}+${el1}`] || { formula: '?', color: 'transparent' };
 }
 
-[flaskLeft, flaskRight].forEach((flask, index) => {
-    flask.addEventListener('dblclick', () => {
-        const liquid = index === 0 ? liquidLeft : liquidRight;
-        liquid.style.height = '0%';
-        flask.querySelector('.machine-flask-label').textContent = 'Пусто';
-        flask.classList.remove('filled');
-        flask.className = 'machine-flask';
-        eto_to_chto_nado_neyronke[index] = '';
-    });
-});
+[flaskLeft, flaskRight].forEach((flask, index) => {flask.addEventListener('dblclick', () => {
+    const liquid = index === 0 ? liquidLeft : liquidRight;
+    liquid.style.height = '0%';
+    flask.querySelector('.machine-flask-label').textContent = 'Пусто';
+    flask.classList.remove('filled');
+    flask.className = 'machine-flask';
+    eto_to_chto_nado_neyronke[index] = '';
+})});
 
 async function AIFeedback(message) {
     try {
@@ -177,15 +175,7 @@ async function AIFeedback(message) {
             const errorData = await response.json();
             throw new Error(errorData.error?.message || `HTTP ${response.status}`);
         }
-
         const data = await response.json();
-        
-        // Добавляем ответ в историю
-        if (data.response) {
-            messages.push({ "role": "assistant", "content": data.response });
-            localStorage.setItem('aiHistory', JSON.stringify(messages));
-        }
-        
         return data.response;
         
     } catch (error) {
