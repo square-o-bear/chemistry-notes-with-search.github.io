@@ -43,14 +43,29 @@
 .input-area {
     display: flex;
     gap: 10px;
+    align-items: center;
+}
+
+#model-select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: white;
+    color: #333;
+    min-width: 110px;
+    max-width: 200px;
+    height: 44px;
 }
 
 #user-input {
-    flex: 1;
-    padding: 12px;
+    flex: 1;                      /* Занимает всё свободное пространство */
+    padding: 12px 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
+    height: 44px;                 /* Высота по линии с другими элементами */
+    min-width: 200px;             /* Минимум, чтобы не сжимался слишком */
 }
 
 #send-button {
@@ -65,6 +80,21 @@
 
 #send-button:hover {
     background-color: #187bcd;
+}
+
+#clear-button {
+    padding: 12px 14px;
+    background-color: #c82333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#clear-button:hover {
+    background-color: #a51c2b;
 }
 
 /* 🌙 Тёмная тема — стили для AI-чата */
@@ -89,6 +119,12 @@
         color: #e0e0e0;
     }
 
+    #model-select {
+        background-color: #333;
+        color: #e0e0e0;
+        border-color: #555;
+    }
+
     #user-input {
         background-color: #333;
         color: #e0e0e0;
@@ -105,5 +141,14 @@
 
     #send-button:hover {
         background-color: #3a7bc8;
+    }
+    
+
+    #clear-button {
+        background-color: #d9534f;
+    }
+
+    #clear-button:hover {
+        background-color: #c9302c;
     }
 }

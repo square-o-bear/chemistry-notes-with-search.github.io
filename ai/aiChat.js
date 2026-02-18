@@ -1,7 +1,9 @@
 const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
-let messages = [{"role": "system", "content": "Прими на себя роль эксперта в химми"}]
+const modelSelect = document.getElementById('model-select');
+const clearButton = document.getElementById('clear-button');
+const messages = JSON.parse(localStorage.getItem('aiHistory') || '[{"role": "system", "content": "Прими на себя роль эксперта в химми"}]');
 let waitResponse = false;
 
 function formater(text) {
@@ -62,6 +64,7 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
         // Добавляем ответ в историю
         if (data.response) {
             messages.push({ "role": "assistant", "content": data.response });
+            localStorage.setItem('aiHistory', JSON.stringify(messages));
         }
         
         return data.response;
@@ -91,7 +94,7 @@ function sendMessage() {
     const placeholder = addMessage('...', false);
     waitResponse = true;
 
-    AIFeedback(message).then(response => {
+    AIFeedback(message, modelSelect.value).then(response => {
         placeholder.innerHTML = formater(response);
         chatContainer.scrollTop = chatContainer.scrollHeight;
         waitResponse = false;
@@ -102,4 +105,12 @@ function sendMessage() {
 sendButton.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
+});
+
+clearButton.addEventListener('click', () => {
+    const confirmed = confirm('Вы уверены, что хотите удалить историю общения?');
+    if (!confirmed) return;
+
+    localStorage.removeItem('aiHistory');
+    location.reload();
 });

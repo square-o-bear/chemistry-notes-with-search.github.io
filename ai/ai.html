@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="aiChat.css">
-    <script src="../config.js"></script>
 </head>
 <body>
     <div class="container">
@@ -36,8 +35,16 @@
                 </div>
             </div>
             <div class="input-area">
-                <input type="text" id="user-input" placeholder="Введите ваш вопрос...">
-                <button id="send-button">Отправить</button>
+
+                <select id="model-select" title="Выберите модель ИИ"> <!-- Выбор модели ИИ -->
+                    <option value="gemini-2-5-flash-lite">Gemini Flash</option>
+                    <option value="gpt-4o">GPT 4o</option>
+                </select>
+
+                
+                <input type="text" id="user-input" placeholder="Введите ваш вопрос..."> <!-- Поле ввода -->
+                <button id="send-button">Отправить</button> <!-- Кнопка отправить -->
+                <button id="clear-button" title="Очистить чат">🗑️</button> <!-- Кнопка сброса -->
             </div>
         </div>
         <script src="aiChat.js"></script>
