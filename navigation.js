@@ -290,7 +290,8 @@ const pages_to_nav = {
         { "what": "Тест по оксидам", "tear": 0},
         { "what": "оксид", "tear": 100},
         { "what": "тест", "tear": 90},
-        { "what": "проверка знаний", "tear": 90}
+        { "what": "знаний", "tear": 80},
+        { "what": "проверка", "tear": 80}
     ],
 
     // HYDROXIDES
@@ -299,6 +300,14 @@ const pages_to_nav = {
         {"what": "гидроксид", "tear": 100},
         {"what": "амфотерные", "tear": 50},
         {"what": "OH", "tear": 10}
+    ],
+
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/oxides/oxidesTest.html": [
+        { "what": "Тест по гидроксидам", "tear": 0},
+        { "what": "гидроксид", "tear": 100},
+        { "what": "тест", "tear": 90},
+        { "what": "знаний", "tear": 80},
+        { "what": "проверка", "tear": 80}
     ],
 
     // AI

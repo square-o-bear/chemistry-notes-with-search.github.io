@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гидроксиды — Тест</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="https://square-o-bear.github.io/chemistry-notes-with-search.github.io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="hydroxidesTest.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Левая секция - поиск -->
+        <div class="left-section">
+            <div class="search-container">
+                <input type="text" placeholder="Поиск по конспекту..." id="search-input">
+                <button id="search-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+
+        <!-- Центральная секция - основной контент -->
+        <div class="center-section">
+            <h1>🧪 Гидроксиды — Тест</h1>
+
+            <div class="test-container">
+                <h2 class="test-title">Проверь свои знания по гидроксидам</h2>
+
+                <form id="oxide-test">
+                    <!-- Задание 1 -->
+                    <div class="task">
+                        <h3>1. Напишите формулы гидроксидов следующих элементов:</h3>
+                        <ol>
+                            <li id="q1t">Кальций (Ca) → <input type="text" id="q1" placeholder="например: Mg(OH)2"></li>
+                            <li id="q2t">Сера (S) → <input type="text" id="q2" placeholder="например: Mg(OH)2"></li>
+                            <li id="q3t">Алюминий (Al) → <input type="text" id="q3" placeholder="например: Mg(OH)2"></li>
+                            <li id="q4t">Магний (Mg) → <input type="text" id="q4" placeholder="например: Mg(OH)2"></li>
+                            <li id="q5t">Углерод (C) → <input type="text" id="q5" placeholder="например: Mg(OH)2"></li>
+                        </ol>
+                    </div>
+
+                    <!-- Задание 2 -->
+                    <div class="task">
+                        <h3>2. Определите валентность атомов в гидроксидах:</h3>
+                        <ol>
+                            <li id="q6t">CO₂ → C → <input type="text" id="q6" placeholder="например: 2"></li>
+                            <li id="q7t">Fe₂O₃ → Fe → <input type="text" id="q7" placeholder="например: 2"></li>
+                            <li id="q8t">SO₃ → S → <input type="text" id="q8" placeholder="например: 2"></li>
+                            <li id="q9t">P₂O₅ → P → <input type="text" id="q9" placeholder="например: 2"></li>
+                            <li id="q10t">Na₂O → Na → <input type="text" id="q10" placeholder="например: 2"></li>
+                        </ol>
+                    </div>
+
+                    <!-- Задание 3 -->
+                    <div class="task">
+                        <h3>3. Составьте формулы гидроксида по названиям:</h3>
+                        <ol>
+                            <li id="q11t">Оксид серы(VI) → <input type="text" id="q11" placeholder="например: Cu(OH)2"></li>
+                            <li id="q12t">Оксид азота(V) → <input type="text" id="q12" placeholder="например: Cu(OH)2"></li>
+                            <li id="q13t">Оксид меди(II) → <input type="text" id="q13" placeholder="например: Cu(OH)2"></li>
+                            <li id="q14t">Оксид фосфора(III) → <input type="text" id="q14" placeholder="например: Cu(OH)2"></li>
+                            <li id="q15t">Оксид хлора(VII) → <input type="text" id="q15" placeholder="например: Cu(OH)2"></li>
+                        </ol>
+                    </div>
+
+                    <button type="button" class="check-btn" onclick="checkAnswers()">Проверить</button>
+                    <p id="result-message" class="result-message"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Правая секция - навигация -->
+        <div class="right-section"></div>
+    </div>
+
+    <script src="../navigation.js"></script>
+    <script src="hydroxidesTest.js"></script>
+</body>
+</html>
