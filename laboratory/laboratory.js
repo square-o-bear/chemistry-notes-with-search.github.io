@@ -111,7 +111,9 @@ mixBtn.addEventListener('click', () => {
             let comment = answer[2];
             //console.log(answer);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment);
-        }).catch(() => {
+        }).catch((e) => {
+            console.error(e);
+            
             const result = getFallbackReaction(eto_to_chto_nado_neyronke[0], eto_to_chto_nado_neyronke[1]);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(result.color, result.formula, 'Информация недоступна.');
         });
@@ -177,6 +179,7 @@ async function AIFeedback(message) {
             throw new Error(errorData.error?.message || `HTTP ${response.status}`);
         }
         const data = await response.json();
+        console.log(data)
         return data.response;
         
     } catch (error) {
