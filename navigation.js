@@ -42,7 +42,7 @@ const pages_to_nav = {
         {"what": "малекул", "tear": 50}
     ],
 
-    // ELEMENTS — 2–4 периоды (уже были)
+    // ELEMENTS - 2–4 периоды (уже были)
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/atom/elements/H.html": [
         { "what": "Водород", "tear": 100 },
         { "what": "H", "tear": 100 }

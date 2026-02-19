@@ -43,7 +43,7 @@ body {
 }
 
 .flask:hover {
-    transform: scale(1.1);        /* Увеличение при наведении — теперь плавнее */
+    transform: scale(1.1);        /* Увеличение при наведении - теперь плавнее */
 }
 
 .flask-symbol {
@@ -331,7 +331,7 @@ body {
     margin-top: 20em;
 }
 
-/* 🌙 ТЁМНАЯ ТЕМА — ЛАБОРАТОРИЯ */
+/* 🌙 ТЁМНАЯ ТЕМА - ЛАБОРАТОРИЯ */
 [theme="dark"] {
     /* Общий фон */
     --bg-primary: #121212;
@@ -368,7 +368,7 @@ body {
     border: 1px solid var(--border-light);
 }
 
-/* Жидкости в колбах — с подсветкой */
+/* Жидкости в колбах - с подсветкой */
 [theme="dark"] .flask.H .flask-liquid { background: #f8f9fa; box-shadow: var(--liquid-glow); }
 [theme="dark"] .flask.N .flask-liquid { background: #f8f9fa; box-shadow: var(--liquid-glow); }
 [theme="dark"] .flask.O .flask-liquid { background: #ffcccc; box-shadow: var(--liquid-glow); }
@@ -390,7 +390,7 @@ body {
 [theme="dark"] .flask.H2SO4 .flask-liquid { box-shadow: 0 0 15px rgba(255,251,230,0.4); }
 [theme="dark"] .flask.NaOH .flask-liquid { box-shadow: 0 0 15px rgba(240,255,240,0.5); }
 
-/* Машина — тёмный фон */
+/* Машина - тёмный фон */
 [theme="dark"] .alchemy-machine {
     background: linear-gradient(145deg, #2d2d2d 0%, #1e1e1e 100%);
     border-color: var(--border-light);

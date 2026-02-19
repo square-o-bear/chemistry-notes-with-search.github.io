@@ -33,7 +33,7 @@ select.addEventListener("change", () => {
         result.textContent = hydroxides[value].formula;
         explanation.textContent = hydroxides[value].comment;
     } else {
-        result.textContent = "—";
+        result.textContent = "-";
         explanation.textContent = "Выберите металл, чтобы увидеть формулу его гидроксида.";
     }
 });

@@ -58,13 +58,13 @@ h1 {
 /* Адаптивная основная таблица */
 .main-table {
   display: grid;
-  /* На больших экранах — 18 колонок */
+  /* На больших экранах - 18 колонок */
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   gap: 6px;
   margin-bottom: 28px;
 }
 
-/* Для очень больших экранов — фиксируем 18 колонок */
+/* Для очень больших экранов - фиксируем 18 колонок */
 @media (min-width: 1200px) {
   .main-table {
     grid-template-columns: repeat(18, 1fr);
@@ -76,14 +76,14 @@ h1 {
   display: grid;
   gap: 6px;
   margin-top: 16px;
-  /* По умолчанию — адаптивно */
+  /* По умолчанию - адаптивно */
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* На больших экранах — 15 колонок и отступ слева */
+/* На больших экранах - 15 колонок и отступ слева */
 @media (min-width: 1200px) {
   .f-block {
     grid-template-columns: repeat(15, 1fr);
