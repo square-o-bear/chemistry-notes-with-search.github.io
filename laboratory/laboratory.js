@@ -111,9 +111,10 @@ mixBtn.addEventListener('click', () => {
             let comment = answer[2];
             //console.log(answer);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment);
+            addFlaskToTop(formula, color);
         }).catch((e) => {
             console.error(e);
-            
+
             const result = getFallbackReaction(eto_to_chto_nado_neyronke[0], eto_to_chto_nado_neyronke[1]);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(result.color, result.formula, 'Информация недоступна.');
         });
