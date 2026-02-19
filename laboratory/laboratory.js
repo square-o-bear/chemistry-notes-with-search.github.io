@@ -104,10 +104,11 @@ mixBtn.addEventListener('click', () => {
         mixBtn.disabled = true;
 
         AIFeedback(`${eto_to_chto_nado_neyronke[0]} + ${eto_to_chto_nado_neyronke[1]}`).then(response => {
+            console.log(response);
             let answer = response.trim().split('\n');
-            let formula = answer[0].replace(/Формула:\s*/, '').trim();
-            let color = answer[1].replace(/Цвет:\s*/, '').trim();
-            let comment = answer[2].join(' ');
+            let formula = answer[0].trim();
+            let color = answer[1].trim();
+            let comment = answer[2];
             //console.log(answer);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment);
         }).catch(() => {
