@@ -33,9 +33,7 @@ const pages_to_nav = {
         {"what": "хими", "tear": 100}
     ],
     "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/": [
-        {"what": "Главное", "tear": 0},
-        {"what": "главн", "tear": 100},
-        {"what": "хими", "tear": 100}
+        {"what": "Главное", "tear": 0}
     ],
 
     // ATOM
