@@ -104,14 +104,11 @@ mixBtn.addEventListener('click', () => {
         mixBtn.disabled = true;
 
         AIFeedback(`${eto_to_chto_nado_neyronke[0]} + ${eto_to_chto_nado_neyronke[1]}`).then(response => {
-            console.log(response);
             let answer = response.trim().split('\n');
             let formula = answer[0].trim();
             let color = answer[1].trim();
             let comment = answer[2];
-            //console.log(answer);
             syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment);
-            addFlaskToTop(formula, color);
         }).catch((e) => {
             console.error(e);
 
@@ -180,7 +177,6 @@ async function AIFeedback(message) {
             throw new Error(errorData.error?.message || `HTTP ${response.status}`);
         }
         const data = await response.json();
-        console.log(data)
         return data.response;
         
     } catch (error) {
@@ -238,6 +234,7 @@ function addFlaskToTop(formula, color) {
 
 function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment) {
     const cleanFormula = formula.trim().replace(/[↑↓]/g, '').split(' ')[0]; // убираем газ/осадок
+    console.log(cleanFormula);
     if (!cleanFormula || cleanFormula === '?' || cleanFormula.length > 10) return;
 
     addFlaskToTop(cleanFormula, color);
