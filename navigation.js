@@ -5,7 +5,7 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 
 // Set values
-const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
+const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'bonds/bonds.html', 'bases/bases.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html', 'salts/salts.html']
 let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('').split('?')[0];
 let lastVisited = [];
 
@@ -344,7 +344,28 @@ const pages_to_nav = {
         {"what": "лаборатори", "tear": 100},
         {"what": "ai", "tear": 100},
         {"what": "химич", "tear": 100}
-    ]
+    ],
+
+    "https://square-o-bear.github.io/chemistry-notes-with-search.github.io/bonds/bonds.html": [
+    { "what": "Химическая связь", "tear": 100 },
+    { "what": "связ", "tear": 100 },
+    { "what": "ковалентн", "tear": 90 },
+    { "what": "ионн", "tear": 90 },
+    { "what": "металлическ", "tear": 90 },
+    { "what": "водородн", "tear": 80 }
+],
+"https://square-o-bear.github.io/chemistry-notes-with-search.github.io/bases/bases.html": [
+    { "what": "Основания", "tear": 0 },
+    { "what": "основани", "tear": 100 },
+    { "what": "щёлоч", "tear": 90 }
+],
+"https://square-o-bear.github.io/chemistry-notes-with-search.github.io/salts/salts.html": [
+    { "what": "Соли", "tear": 0 },
+    { "what": "сол", "tear": 0 },
+    { "what": "средн", "tear": 80 },
+    { "what": "кисл", "tear": 80 },
+    { "what": "основн", "tear": 80 }
+]
 };
 
 
