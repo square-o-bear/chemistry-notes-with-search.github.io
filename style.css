@@ -241,7 +241,7 @@ a:hover {
     content: "🔍"; /* Пример иконки (можно заменить) */
     margin-right: 8px;
     font-size: 18px;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 #search-results a:hover::before {
@@ -258,19 +258,17 @@ a:hover {
     border: 2px dashed #ffcccc;
     border-radius: 12px;
     color: #d9534f;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     text-align: center;
     margin-top: 20px;
     box-shadow: 0 2px 8px rgba(255, 77, 76, 0.15);
+    transition: all 0.3s ease;
     transition: opacity 0.4s ease;
 }
 
-.no-find-results::before {
-    content: "😢";
-    margin-right: 12px;
-    font-size: 28px;
-    vertical-align: middle;
+.no-find-results:hover {
+    background-color: #d9534f;
 }
 
 /* СТИЛИ ДЛЯ ТАБЛИЦ */

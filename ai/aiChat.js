@@ -6,6 +6,15 @@ const clearButton = document.getElementById('clear-button');
 const messages = JSON.parse(localStorage.getItem('aiHistory') || '[{"role": "system", "content": "Прими на себя роль эксперта в химми"}]');
 let waitResponse = false;
 
+
+const params = new URLSearchParams(window.location.search);
+const initMessage = params.get('init');
+
+if (initMessage != null) {
+    console.log(initMessage);
+    userInput.value = initMessage;
+}
+
 for (let i = 1; i < messages.length; ++i) {
     addMessage(formater(messages[i].content), messages[i].role == 'user');
     console.log(messages[i])

@@ -6,7 +6,7 @@ const search_results = document.getElementById("search-results")
 
 // Set values
 const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html']
-let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('');
+let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('').split('?')[0];
 let lastVisited = [];
 
 if (localpage != window.location.href) {
@@ -411,9 +411,10 @@ async function finder() {
 
     if (search_results.children.length === 1) {
         search_results.innerHTML = "";
-        const noResults = document.createElement("div");
+        const noResults = document.createElement("a");
+        noResults.href = `https://square-o-bear.github.io/chemistry-notes-with-search.github.io/ai/ai.html?init=${request.join(' ')}`
         noResults.className = "no-find-results";
-        noResults.textContent = "Ничего не найдено"; 
+        noResults.textContent = "Ничего не найдено\nСпросить у ИИ асистента?"; 
         noResults.style.transition = 'none';
         noResults.style.opacity = '0';
         noResults.style.height = 'auto'; // Чтобы анимация высоты работала
