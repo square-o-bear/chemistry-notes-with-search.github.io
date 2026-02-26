@@ -62,7 +62,7 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
         messages.push({ "role": "user", "content": message });
         
         // URL вашего Cloudflare Worker
-        const WORKER_URL = 'https://chemistry-notes-with-search.mika-ushakov.workers.dev/api/genapi';
+        const WORKER_URL = 'https://genapi-proxy.onrender.com/api/genapi';
         
         // Отправляем запрос к прокси
         const response = await fetch(WORKER_URL, {
