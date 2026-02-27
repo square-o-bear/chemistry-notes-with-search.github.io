@@ -359,7 +359,7 @@ const pages_to_nav = {
     { "what": "основани", "tear": 100 },
     { "what": "щёлоч", "tear": 90 }
 ],
-"https://square-o-bear.github.io/chemistry-notes-with-search.github.io/salts/salts.html": [
+"https://square-o-bear.github.io/chemistry-notes-with-search.github.io/salt/salt.html": [
     { "what": "Соли", "tear": 0 },
     { "what": "сол", "tear": 0 },
     { "what": "средн", "tear": 80 },
