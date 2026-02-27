@@ -5,7 +5,7 @@ const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 
 // Set values
-const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'bonds/bonds.html', 'bases/bases.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html', 'salts/salts.html']
+const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'bonds/bonds.html', 'bases/bases.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html', 'salt/salt.html']
 let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('').split('?')[0];
 let lastVisited = [];
 
