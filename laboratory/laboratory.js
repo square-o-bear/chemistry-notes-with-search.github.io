@@ -35,7 +35,7 @@ function updateOutputDisplay() {
 
 async function AIFeedback(message) {
     try {
-        const WORKER_URL = 'https://chemistry-notes-with-search.mika-ushakov.workers.dev/api/genapi';
+        const WORKER_URL = 'https://genapi-proxy.onrender.com/api/genapi';
         
         // Отправляем запрос к прокси
         const response = await fetch(WORKER_URL, {
