@@ -18,7 +18,7 @@ function add() {
         remainingElectrons -= electronsHere;
     }
     for (const level of sublayers) {
-        if (levelObj[level] === undefined) break;
+        if (levelObj[level] == undefined) break;
         layer=parseInt(level[0]);
         sublayersElectron += `${level}${superscriptMap[levelObj[level]]} `
     }
@@ -45,14 +45,13 @@ function add() {
     const newElectron = document.createElement('div');
     newElectron.classList.add("electron");
     newElectron.id = count;
-    //newElectron.style.transform = `translate(calc(${Math.cos(angle)*layer - 2.5}*min(1vh, 1vw))), calc(${Math.cos(angle)*layer - 2.5}*min(1vh, 1vw)))`;\
 
     atom.appendChild(newElectron)
     electroms.push({
         "el": newElectron,
         "orbit": newOrbit,
         length: electronOrbitLength,
-        speed: 0.01, //Math.random() * 0.015 + 0.005, 
+        speed: 0.01,
         angle: angle
     })
 }
@@ -81,7 +80,7 @@ function minus() {
                 remainingElectrons -= electronsHere;
             }
             for (const level of sublayers) {
-                if (levelObj[level] === undefined) break;
+                if (levelObj[level] == undefined) break;
                 layer++;
                 sublayersElectron += `${level}${superscriptMap[levelObj[level]]} `
             }

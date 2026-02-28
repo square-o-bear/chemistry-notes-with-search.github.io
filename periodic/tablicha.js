@@ -167,7 +167,7 @@ document.addEventListener('click', e => {
 
 function createElementCell(number) {
   const cell = document.createElement('div');
-  if (number === null) {
+  if (number == null) {
     cell.classList.add('cell', 'empty');
     return cell;
   }

@@ -1,17 +1,15 @@
-// Some tegs
 const pagesNav = document.getElementsByClassName('right-section')[0];
 const search_input = document.getElementById("search-input")
 const search_button = document.getElementById("search-button")
 const search_results = document.getElementById("search-results")
 
-// Set values
 const recomend = ['index.html', 'ai/ai.html', 'laboratory/laboratory.html', 'atom/atom.html', 'molecules/molecules.html', 'periodic/periodic.html', 'reactions/reactions.html', 'bonds/bonds.html', 'bases/bases.html', 'oxides/oxides.html', 'hydroxides/hydroxides.html', 'salt/salt.html']
 let localpage = window.location.href.split('https://square-o-bear.github.io/chemistry-notes-with-search.github.io/').join('').split('?')[0];
 let lastVisited = [];
 
 if (localpage != window.location.href) {
     lastVisited = JSON.parse(localStorage.getItem('last'));
-    if (localStorage.getItem('last') === null) {
+    if (localStorage.getItem('last') == null) {
         lastVisited = [];
     }
     lastVisited = lastVisited.filter((page) => page !== localpage).filter((page) => !(recomend.includes(page)));
@@ -375,7 +373,7 @@ function comparison(key, input) {
     const maxLength = Math.max(key.length, input.length);
     let score = 0;
     for (let i = 0; i < minLength; ++i) {
-        if (key[i] === input[i])
+        if (key[i] == input[i])
             score++;
         else 
             score--;
@@ -430,7 +428,7 @@ async function finder() {
         }, 0);
     })
 
-    if (search_results.children.length === 1) {
+    if (search_results.children.length == 1) {
         search_results.innerHTML = "";
         const noResults = document.createElement("a");
         noResults.href = `https://square-o-bear.github.io/chemistry-notes-with-search.github.io/ai/ai.html?init=${request.join(' ')}`
@@ -453,7 +451,7 @@ async function finder() {
 
 search_button.addEventListener("click", finder)
 search_input.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
+    if (event.key == "Enter") {
         finder();
     }
 });
@@ -480,7 +478,7 @@ pageNavHTML += `</ul></div>`
 pagesNav.innerHTML = pageNavHTML
 
 const themeChanger = document.getElementById('themeChange')
-if (localStorage.getItem('theme') === 'dark') {
+if (localStorage.getItem('theme') == 'dark') {
     document.documentElement.setAttribute('theme', 'dark');
 }
 const allTag = document.querySelectorAll('*');
@@ -491,7 +489,7 @@ allTag.forEach((element) => {
 setTimeout(() => {allTag.forEach((element) => element.style.transition = 'all 0.3s ease');}, 0);
 
 themeChanger.addEventListener("click", () => {
-    let newTheme = (document.documentElement.getAttribute('theme') === 'dark' ? 'light' : 'dark');
+    let newTheme = (document.documentElement.getAttribute('theme') == 'dark' ? 'light' : 'dark');
     document.documentElement.setAttribute('theme', newTheme);
     localStorage.setItem('theme', newTheme);
 })

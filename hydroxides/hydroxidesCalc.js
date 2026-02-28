@@ -2,7 +2,6 @@ const select = document.getElementById("metal-select");
 const result = document.getElementById("hydroxide-result");
 const explanation = document.getElementById("explanation");
 
-// База данных металлов и их гидроксидов
 const hydroxides = {
     Na:  { formula: "NaOH",  comment: "Щёлочь. Растворима в воде, сильное основание.", name: "Натрий"},
     K:   { formula: "KOH",   comment: "Щёлочь. Используется в аккумуляторах.", name: "Калий"},
@@ -18,7 +17,6 @@ const hydroxides = {
     Cr:  { formula: "Cr(OH)₃", comment: "Амфотерный гидроксид. Серо-зелёный осадок.", name: "Хром"}
 };
 
-// Заполняем выпадающий список: Название (символ)
 Object.keys(hydroxides).forEach(key => {
     const option = document.createElement("option");
     option.value = key;
@@ -26,7 +24,6 @@ Object.keys(hydroxides).forEach(key => {
     select.appendChild(option);
 });
 
-// Обновляем результат
 select.addEventListener("change", () => {
     const value = select.value;
     if (value && hydroxides[value]) {

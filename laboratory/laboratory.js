@@ -1,6 +1,4 @@
 
-//  function
-
 function getFallbackReaction(el1, el2) {
     const reactions = {
         'H+O': { formula: 'H₂O', color: '#a0e7ff' },
@@ -20,12 +18,11 @@ function updateFlask(flask, liquid, label, element, index) {
     liquid.style.height = '45%';
     liquid.style.background = elementColors[element];
     flask.classList.add('filled');
-    flask.className = `machine-flask filled ${element.replace(/[₀₁₂₃₄₅₆₇₈₉]/g, '')}`; // убираем индексы для класса
+    flask.className = `machine-flask filled ${element.replace(/[₀₁₂₃₄₅₆₇₈₉]/g, '')}`;
     flask.dataset.element = element;
     eto_to_chto_nado_neyronke[index] = element;
 }
 
-// Обновление выхода
 function updateOutputDisplay() {
     const result = na_eto_zabey_ono_dolzhno_rabotat[0];
     outputContent.style.background = result.color;
@@ -37,7 +34,6 @@ async function AIFeedback(message) {
     try {
         const WORKER_URL = 'https://genapi-proxy.onrender.com/api/genapi';
         
-        // Отправляем запрос к прокси
         const response = await fetch(WORKER_URL, {
             method: 'POST',
             headers: {
@@ -64,13 +60,11 @@ async function AIFeedback(message) {
     }
 }
 
-// Добавление новой колбы в верхний ряд + сохранение
 function addFlaskToTop(formula, color) {
     const container = document.getElementById('flasks-top');
 
-    // Проверяем, есть ли уже такая колба
     if (document.querySelector(`.flask[data-element="${formula}"]`)) {
-        return; // не дублируем
+        return;
     }
 
     const flask = document.createElement('div');
@@ -105,7 +99,7 @@ function addFlaskToTop(formula, color) {
     container.appendChild(flask);
 
     let discoveredElements = JSON.parse(localStorage.getItem('discoveredElements') || '[]');
-    if (!discoveredElements.some(([el]) => el === formula)) {
+    if (!discoveredElements.some(([el]) => el == formula)) {
         discoveredElements.push([formula, color]);
         localStorage.setItem('discoveredElements', JSON.stringify(discoveredElements));
     }
@@ -113,7 +107,7 @@ function addFlaskToTop(formula, color) {
 
 function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment) {
     const cleanFormula = formula.trim().replace(/[↑↓]/g, '').split(' ')[0]; // убираем газ/осадок
-    if (!cleanFormula || cleanFormula === '?' || cleanFormula.length > 10) return;
+    if (!cleanFormula || cleanFormula == '?' || cleanFormula.length > 10) return;
 
     addFlaskToTop(cleanFormula, color);
 
@@ -121,8 +115,6 @@ function syda_nado_vstavlyat_to_chto_otvetila_neyronka(color, formula, comment) 
     reactionComment.textContent = comment;
     updateOutputDisplay();
 }
-
-// vars
 
 let eto_to_chto_nado_neyronke = ['', ''];
 let na_eto_zabey_ono_dolzhno_rabotat = [{ color: 'transparent', formula: '?' }];
@@ -146,7 +138,6 @@ const reactionComment = document.getElementById('reaction-comment');
 
 const elementColors = {'H': '#f8f9fa', 'O': '#ffcccc', 'C': '#333333', 'Na': '#ffeb99', 'Cl': '#cce5ff', 'S': '#ffff99', 'Fe': '#8b4513', 'Au': '#ffd700', 'Ag': '#c0c0c0', 'Cu': '#b87333', 'P': '#ff9999', 'H₂O': '#a0e7ff', 'CO₂': '#e0e0e0', 'NH₃': '#f0f8ff', 'CH₄': '#fff4d0', 'O₂': '#ffe6e6', 'HCl': '#fff9e6', 'H₂SO₄': '#fffbe6', 'NaOH': '#f0fff0'};
 
-// КНОПКА ОЧИСТКИ ИЗУЧЕННЫХ ВЕЩЕСТВ
 clearBtn.addEventListener('click', () => {
     const confirmed = confirm('Вы уверены, что хотите удалить все открытые вещества?');
     if (!confirmed) return;
@@ -167,7 +158,6 @@ clearBtn.addEventListener('click', () => {
     alert('Все изученные вещества удалены.');
 });
 
-// Восстановление открытых веществ при загрузке
 document.addEventListener('DOMContentLoaded', () => {
     const savedElements = JSON.parse(localStorage.getItem('discoveredElements') || '[]');
     savedElements.forEach(([formula, color]) => {
@@ -175,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Drag & Drop
 flasksTop.addEventListener('dragstart', (e) => {
     const flask = e.target.closest('.flask');
     if (flask) {
@@ -188,7 +177,6 @@ flasksTop.addEventListener('dragend', () => {
     document.querySelectorAll('.flask').forEach(f => f.style.opacity = '1');
 });
 
-// Левый флакон
 flaskLeft.addEventListener('dragover', (e) => { e.preventDefault(); flaskLeft.classList.add('filled'); });
 flaskLeft.addEventListener('dragleave', () => { flaskLeft.classList.remove('filled'); });
 flaskLeft.addEventListener('drop', (e) => {
@@ -197,7 +185,6 @@ flaskLeft.addEventListener('drop', (e) => {
     updateFlask(flaskLeft, liquidLeft, labelLeft, element, 0);
 });
 
-// Правый флакон
 flaskRight.addEventListener('dragover', (e) => { e.preventDefault(); flaskRight.classList.add('filled'); });
 flaskRight.addEventListener('dragleave', () => { flaskRight.classList.remove('filled'); });
 flaskRight.addEventListener('drop', (e) => {
@@ -206,7 +193,6 @@ flaskRight.addEventListener('drop', (e) => {
     updateFlask(flaskRight, liquidRight, labelRight, element, 1);
 });
 
-// Смешивание
 mixBtn.addEventListener('click', () => {
     if (eto_to_chto_nado_neyronke[0] && eto_to_chto_nado_neyronke[1]) {
         mixBtn.disabled = true;
@@ -240,7 +226,7 @@ mixBtn.addEventListener('click', () => {
 });
 
 [flaskLeft, flaskRight].forEach((flask, index) => {flask.addEventListener('dblclick', () => {
-    const liquid = index === 0 ? liquidLeft : liquidRight;
+    const liquid = index == 0 ? liquidLeft : liquidRight;
     liquid.style.height = '0%';
     flask.querySelector('.machine-flask-label').textContent = 'Пусто';
     flask.classList.remove('filled');

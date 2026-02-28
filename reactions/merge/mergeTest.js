@@ -1,5 +1,4 @@
 
-// Задания
 var varients1 = [
     { task: "4Al + 3O₂ → ?", answer: "Al2O3" },
     { task: "2Mg + O₂ → ?", answer: "2MgO" },
@@ -28,12 +27,10 @@ var varients2 = [
 
 let correctAnswers = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 
-// добавление их на сайт
 for (let i = 0; i < 10; ++i) {
     let task1n = Math.min(Math.floor(Math.random() * varients1.length), Math.max(0, varients1.length-1));
     correctAnswers[i] = varients1[task1n].answer;
     document.getElementById(`q${i+1}t`).innerHTML = `${varients1[task1n].task} → <input type="text" id="q${i+1}" placeholder="например: 2P2O5">`
-    //varients1[task1n].task + " → ";
     varients1.splice(task1n, 1);
 }
 
@@ -41,12 +38,9 @@ for (let i = 0; i < 10; ++i) {
     let task2n = Math.min(Math.floor(Math.random() * varients2.length), Math.max(0, varients2.length-1));
     correctAnswers[i+10] = varients2[task2n].answer;
     document.getElementById(`q${i+11}t`).innerHTML = `${varients2[task2n].task} → <input type="text" id="q${i+11}" placeholder="например: 2HgO">`
-    //varients1[task1n].task + " → ";
     varients2.splice(task2n, 1);
 }
 
-
-// Проверка
 function checkAnswers() {
     let correctCount = 0;
     for (let i = 1; i <= 20; ++i) {

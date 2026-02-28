@@ -65,12 +65,10 @@ let varients3 = [
 
 let correctAnswers = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 
-// добавление их на сайт
 for (let i = 0; i < 5; ++i) {
     let task1n = Math.min(Math.floor(Math.random() * varients1.length), Math.max(0, varients1.length-1));
     correctAnswers[i] = varients1[task1n].answer;
     document.getElementById(`q${i+1}t`).innerHTML = `${varients1[task1n].task} → <input type="text" id="q${i+1}" placeholder="например: Mg(OH)2">`
-    //varients1[task1n].task + " → ";
     varients1.splice(task1n, 1);
 }
 
@@ -78,7 +76,6 @@ for (let i = 0; i < 5; ++i) {
     let task2n = Math.min(Math.floor(Math.random() * varients2.length), Math.max(0, varients2.length-1));
     correctAnswers[i+5] = varients2[task2n].answer;
     document.getElementById(`q${i+6}t`).innerHTML = `${varients2[task2n].task} → <input type="text" id="q${i+6}" placeholder="например: 2">`
-    //varients1[task1n].task + " → ";
     varients2.splice(task2n, 1);
 }
 
@@ -86,11 +83,9 @@ for (let i = 0; i < 5; ++i) {
     let task3n = Math.min(Math.floor(Math.random() * varients3.length), Math.max(0, varients3.length-1));
     correctAnswers[i+10] = varients3[task3n].answer;
     document.getElementById(`q${i+11}t`).innerHTML = `${varients3[task3n].task} → <input type="text" id="q${i+11}" placeholder="например: Cu(OH)2">`
-    //varients1[task1n].task + " → ";
     varients3.splice(task3n, 1);
 }
 
-// Проверка
 function checkAnswers() {
     let correctCount = 0;
     for (let i = 1; i <= 15; ++i) {

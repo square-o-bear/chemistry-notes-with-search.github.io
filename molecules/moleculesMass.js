@@ -68,10 +68,10 @@ function parseFormula(formula) {
   while (i < formula.length) {
     let char = formula[i];
 
-    if (char === '(') {
+    if (char == '(') {
       stack.push({});
       i++;
-    } else if (char === ')') {
+    } else if (char == ')') {
       const group = stack.pop();
       i++;
 
@@ -119,10 +119,9 @@ function calculateMolarMass() {
   const input = document.getElementById('formula').value.trim();
   const resultDiv = document.getElementById('result');
  
-  // Сбрасываем высоту и делаем прозрачным перед обновлением
   resultDiv.style.transition = 'none';
   resultDiv.style.opacity = '0';
-  resultDiv.style.height = 'auto'; // Чтобы анимация высоты работала
+  resultDiv.style.height = 'auto';
   resultDiv.style.overflow = 'hidden';
 
   if (!input) {
@@ -134,7 +133,7 @@ function calculateMolarMass() {
   try {
     const parts = input.split(' ').join('').split('+').map(part => part.trim()).filter(part => part.length > 0);
 
-    if (parts.length === 0) {
+    if (parts.length == 0) {
       throw new Error('Пустая формула');
     }
 
@@ -174,7 +173,7 @@ function calculateMolarMass() {
 }
 
 document.getElementById('formula').addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
+  if (e.key == 'Enter') {
     calculateMolarMass();
   }
 });

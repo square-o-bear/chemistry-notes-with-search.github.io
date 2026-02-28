@@ -58,13 +58,9 @@ function formater(text) {
  */
 async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
     try {
-        // Добавляем сообщение пользователя в историю
         messages.push({ "role": "user", "content": message });
-        
-        // URL вашего Cloudflare Worker
         const WORKER_URL = 'https://genapi-proxy.onrender.com/api/genapi';
         
-        // Отправляем запрос к прокси
         const response = await fetch(WORKER_URL, {
             method: 'POST',
             headers: {
@@ -83,7 +79,6 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
 
         const data = await response.json();
         
-        // Добавляем ответ в историю
         if (data.response) {
             messages.push({ "role": "assistant", "content": data.response });
             localStorage.setItem('aiHistory', JSON.stringify(messages));
@@ -93,7 +88,6 @@ async function AIFeedback(message, modelId = 'gemini-2-5-flash-lite') {
         
     } catch (error) {
         console.error('Ошибка при создания ответа от ИИ:', error.message);
-        //throw error;
     }
 }
 
@@ -108,7 +102,7 @@ function addMessage(text, isUser) {
 
 function sendMessage() {
     const message = userInput.value.trim();
-    if (message === '' || waitResponse) return;
+    if (message == '' || waitResponse) return;
 
     addMessage(message, true);
     userInput.value = '';
@@ -123,10 +117,9 @@ function sendMessage() {
     })
 }
 
-// Отправка по клику и по Enter
 sendButton.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
+    if (e.key == 'Enter') sendMessage();
 });
 
 clearButton.addEventListener('click', () => {

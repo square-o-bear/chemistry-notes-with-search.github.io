@@ -5,7 +5,7 @@ const compoundResult = document.getElementById("compound-result");
 const explanation = document.getElementById("explanation");
 
 const downcase = ['₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
-// === КАТИОНЫ (металлы и NH₄⁺) ===
+
 const metals = {
     Na:  { valence: 1, name: "Натрий" },
     K:   { valence: 1, name: "Калий" },
@@ -29,7 +29,7 @@ const metals = {
     Co:  { valence: 2, name: "Кобальт" }
 };
 
-// === АНИОНЫ (кислотные остатки) ===
+
 const nonmetals = {
     Cl:  { valence: 1, name: "хлорид",     formula: "Cl₂",    root: "Cl", multi: false},
     Br:  { valence: 1, name: "бромид",     formula: "Br₂",    root: "Br", multi: false},
@@ -45,18 +45,18 @@ const nonmetals = {
 
 for (const metal in metals) {
     const newOption = document.createElement("option");
-    newOption.value = metal; // Set the value attribute
+    newOption.value = metal;
     if (metal != "Fe3")
-        newOption.text = `${metals[metal].name} (${metal})`; // Set the visible text
+        newOption.text = `${metals[metal].name} (${metal})`;
     else 
-        newOption.text = `Железо(III) (Fe³)`; // Set the visible text
+        newOption.text = `Железо(III) (Fe³)`;
     selectMetal.add(newOption)
 }
 
 for (const nonmetal in nonmetals) {
     const newOption = document.createElement("option");
-    newOption.value = nonmetal; // Set the value attribute
-    newOption.text = `${nonmetals[nonmetal].name} (${nonmetal})`; // Set the visible text
+    newOption.value = nonmetal;
+    newOption.text = `${nonmetals[nonmetal].name} (${nonmetal})`;
     selectNonmetal.add(newOption)
 }
 
